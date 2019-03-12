@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "fx-win32k-report",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "win32k reports automatically generated",
   "version": "0.1.0",
-  "license": "MIT",
+  "license": "BSD-3-Clause",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
