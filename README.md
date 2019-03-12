@@ -1,5 +1,5 @@
 <h1 align="center">
-  [firefox win32k reports site](fx-win32k-report.github.io)
+  <a href="http://fx-win32k-report.github.io">firefox win32k reports site</a>
 </h1>
 
 Automated reporting for win32k usage in content processes served up every week!
