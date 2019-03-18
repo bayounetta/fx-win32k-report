@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const convertLogToJSON = (data) => {
+export const convertLogToJSON = (data) => {
   let log = [];
   let stack = [];
 
@@ -29,11 +29,11 @@ const convertLogToJSON = (data) => {
   }));
 };
 
-const findAndProcessLogs = () => {
-  fs.readdirSync(path.join(process.cwd(), '/logs/')).forEach((file) => {
+export const findAndProcessLogs = () => {
+  fs.readdirSync(path.join(process.cwd(), '/logs/win32k/')).forEach((file) => {
     fs.writeFileSync(
-      path.join(process.cwd(), '/logs/', file.split('.')[0] + '.json'),
-      convertLogToJSON(fs.readFileSync(path.join(process.cwd(), '/logs/', file), 'utf8'))),
+      path.join(process.cwd(), '/logs/win32k/', file.split('.')[0] + '.json'),
+      convertLogToJSON(fs.readFileSync(path.join(process.cwd(), '/logs/win32k/', file), 'utf8'))),
       'utf8'
   });
 };
