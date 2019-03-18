@@ -5,9 +5,9 @@
   "version": "0.1.0",
   "license": "BSD-3-Clause",
   "scripts": {
-    "build": "gatsby build",
+    "build": "node ./src/utility/process.js && gatsby build",
     "clean": "npx rimraf node_modules/ .cache/ public/",
-    "deploy": "node ./deploy.js",
+    "deploy": "node ./src/utility/deploy.js",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
