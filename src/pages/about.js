@@ -4,7 +4,7 @@ import Header from '../components/header';
 
 export default () => (
   <div>
-    <Header index="about" />
+    <Header />
     <h3>This project site tracks the changes week to week in NT function usage in content processes, specifically related to <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1381019">win32k usage.</a></h3>
     <br />
 

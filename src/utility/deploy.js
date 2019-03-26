@@ -12,4 +12,4 @@ ghpages.publish(
       else {
         console.error(err);
       }
-    })
+    });

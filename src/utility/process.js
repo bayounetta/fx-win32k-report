@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-export const convertLogToJSON = (data) => {
+const convertLogToJSON = (data) => {
   let log = [];
   let stack = [];
 
@@ -22,22 +22,31 @@ export const convertLogToJSON = (data) => {
   });
 
   // convert array of stacks into array of objects with frequency and frames
-  return JSON.stringify(log.map((arr) => {
-    let frequency = parseInt(arr.splice(0, 1));
+  return JSON.stringify(
+    log.map((arr) => {
+      let frequency = parseInt(arr.splice(0, 1));
 
-    return {frequency: frequency, frames: arr};
-  }));
+      return { frequency: frequency, frames: arr };
+    })
+  );
 };
 
-export const findAndProcessLogs = () => {
+const findAndProcessLogs = () => {
   fs.readdirSync(path.join(process.cwd(), '/logs/win32k/')).forEach((file) => {
     fs.writeFileSync(
       path.join(process.cwd(), '/logs/win32k/', file.split('.')[0] + '.json'),
-      convertLogToJSON(fs.readFileSync(path.join(process.cwd(), '/logs/win32k/', file), 'utf8'))),
-      'utf8'
+      convertLogToJSON(fs.readFileSync(path.join(process.cwd(), '/logs/win32k/', file), 'utf8'))
+    ),
+    'utf8';
   });
 };
 
-(function main () {
+const main = () => {
   findAndProcessLogs();
-})();
+};
+
+module.exports = {
+  convertLogToJSON,
+  findAndProcessLogs,
+  main,
+}

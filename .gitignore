@@ -61,9 +61,6 @@ public
 # Mac files
 .DS_Store
 
-# Yarn
-yarn-error.log
-.pnp/
-.pnp.js
-# Yarn Integrity file
-.yarn-integrity
+# snapshot files from jest tests
+__snapshots__
+*.snap

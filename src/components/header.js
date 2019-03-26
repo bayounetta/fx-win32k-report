@@ -3,12 +3,12 @@ import React from 'react';
 
 import headerStyles from './header.module.css';
 
-export default (props) => (
+export default () => (
   <div className={headerStyles.header}>
-    <div className={headerStyles.title}>Firefox win32k reports! {props.title}</div>
+    <div className={headerStyles.title}>Firefox win32k reports!</div>
     <div className={headerStyles.navigation}>
-      <a className={headerStyles.navigationLink} href="/">index</a>
-      <a className={headerStyles.navigationLink} href="/about">about</a>
+      <Link className={headerStyles.navigationLink} to="/">index</Link>
+      <Link className={headerStyles.navigationLink} to="/about">about</Link>
     </div>
   </div>
 );
