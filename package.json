@@ -5,23 +5,30 @@
   "version": "0.1.0",
   "license": "BSD-3-Clause",
   "scripts": {
-    "build": "node ./src/utility/process.js && gatsby build",
-    "clean": "npx rimraf node_modules/ .cache/ public/",
+    "build": "node -e \"require('./src/utility/process.js').main()\" && gatsby build",
+    "clean": "npx rimraf node_modules/ .cache/ public/ logs/ **/__snapshots__/",
     "deploy": "node ./src/utility/deploy.js",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "jest"
   },
   "dependencies": {
     "gatsby": "^2.1.30",
+    "gatsby-source-filesystem": "^2.0.28",
+    "gatsby-transformer-json": "^2.1.11",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
   },
   "devDependencies": {
+    "babel-jest": "^24.5.0",
+    "babel-preset-gatsby": "^0.1.9",
     "gh-pages": "^2.0.1",
-    "prettier": "^1.16.4"
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.5.0",
+    "prettier": "^1.16.4",
+    "react-test-renderer": "^16.8.4"
   },
   "repository": {
     "type": "git",
