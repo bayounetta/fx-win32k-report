@@ -7,7 +7,7 @@
   "scripts": {
     "build": "node -e \"require('./src/utility/process.js').main()\" && gatsby build",
     "clean": "npx rimraf node_modules/ .cache/ public/ logs/ **/__snapshots__/",
-    "deploy": "node ./src/utility/deploy.js",
+    "deploy": "npm run build && node ./src/utility/deploy.js",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
