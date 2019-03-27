@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{140:function(e,n,t){"use strict";t.r(n);var a=t(0),r=t.n(a),l=t(143);n.default=function(){return r.a.createElement("div",null,r.a.createElement(l.a,{index:"about"}),r.a.createElement("p",null,"aboot"))}},143:function(e,n,t){"use strict";var a=t(0),r=t.n(a);n.a=function(e){return r.a.createElement("div",null,r.a.createElement("p",null,"Firefox win32k reports!",e.title))}}}]);
-//# sourceMappingURL=component---src-pages-about-js-0274e267e52d9d722336.js.map
