@@ -7,7 +7,10 @@ export default ({ data }) => (
   <div>
     <Header />
     <h3>05 - webrtc - report</h3>
-    <p>This is a log capturing a peer to peer video conference connection of WebRTC.</p>
+    <p>
+      This is a log capturing a peer to peer video conference connection of
+      WebRTC.
+    </p>
     <div>
       {data.allWebrtcReportJson.edges.map((node) => (
         <div>

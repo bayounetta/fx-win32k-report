@@ -7,7 +7,10 @@ export default ({ data }) => (
   <div>
     <Header />
     <h3>07 - all - breakpoints - report</h3>
-    <p>This is a log capturing basic browsing to mozilla.org with no NT call breakpoints excluded.</p>
+    <p>
+      This is a log capturing basic browsing to mozilla.org with no NT call
+      breakpoints excluded.
+    </p>
     <div>
       {data.allAllBreakpointsReportJson.edges.map((node) => (
         <div>

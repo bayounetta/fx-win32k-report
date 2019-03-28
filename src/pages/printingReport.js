@@ -7,7 +7,10 @@ export default ({ data }) => (
   <div>
     <Header />
     <h3>06 - printing - report</h3>
-    <p>This is a log capturing navigation to mozilla.org followed by printing the page to pdf.</p>
+    <p>
+      This is a log capturing navigation to mozilla.org followed by printing the
+      page to pdf.
+    </p>
     <div>
       {data.allPrintingReportJson.edges.map((node) => (
         <div>
