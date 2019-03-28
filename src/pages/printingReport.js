@@ -9,26 +9,29 @@ export default ({ data }) => (
     <h3>06 - printing - report</h3>
     <p>This is a log capturing navigation to mozilla.org followed by printing the page to pdf.</p>
     <div>
-      {
-        data.allPrintingReportJson.edges.map((node) => (
+      {data.allPrintingReportJson.edges.map((node) => (
         <div>
-          <p className="stackFrequency">{node.node.frequency} - {node.node.frames[0]}</p>
-          {node.node.frames.map((elem) => (<p className="stackFrame">{elem}</p>))}
+          <p className="stackFrequency">
+            {node.node.frequency} - {node.node.frames[0]}
+          </p>
+          {node.node.frames.map((elem) => (
+            <p className="stackFrame">{elem}</p>
+          ))}
         </div>
-        ))
-      }
+      ))}
     </div>
   </div>
 );
 
 export const query = graphql`
-query {
-  allPrintingReportJson {
-    edges {
-      node {
-        frequency
-        frames
+  query {
+    allPrintingReportJson {
+      edges {
+        node {
+          frequency
+          frames
+        }
       }
     }
   }
-}`;
+`;
