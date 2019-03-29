@@ -3,22 +3,26 @@ import React from 'react';
 
 import Header from '../components/header';
 
+import logStyles from './log.module.css';
+
 export default ({ data }) => (
   <div>
     <Header />
-    <h3>00 - full - report</h3>
-    <p>This is a concatenated report of all the generated win32k usage logs.</p>
-    <div>
-      {data.allFullReportJson.edges.map((node) => (
-        <div>
-          <p className="stackFrequency">
-            {node.node.frequency} - {node.node.frames[0]}
-          </p>
-          {node.node.frames.map((elem) => (
-            <p className="stackFrame">{elem}</p>
-          ))}
-        </div>
-      ))}
+    <div className="page">
+      <h3>00 - full - report</h3>
+      <p className={logStyles.reportExplanation}>This is a concatenated report of all the generated win32k usage logs.</p>
+      <div className={logStyles.stack}>
+        {data.allFullReportJson.edges.map((node) => (
+          <div>
+            <p className={logStyles.stackFrequency}>
+              {node.node.frequency} - {node.node.frames[0]}
+            </p>
+            {node.node.frames.map((elem) => (
+              <p className={logStyles.stackFrame}>{elem}</p>
+            ))}
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 );
