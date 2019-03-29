@@ -35,9 +35,11 @@ const findAndProcessLogs = () => {
   fs.readdirSync(path.join(process.cwd(), '/logs/win32k/')).forEach((file) => {
     fs.writeFileSync(
       path.join(process.cwd(), '/logs/win32k/', file.split('.')[0] + '.json'),
-      convertLogToJSON(fs.readFileSync(path.join(process.cwd(), '/logs/win32k/', file), 'utf8'))
-    ),
-    'utf8';
+      convertLogToJSON(
+        fs.readFileSync(path.join(process.cwd(), '/logs/win32k/', file), 'utf8')
+      ),
+      'utf8'
+    );
   });
 };
 
@@ -49,4 +51,4 @@ module.exports = {
   convertLogToJSON,
   findAndProcessLogs,
   main,
-}
+};

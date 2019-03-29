@@ -1,0 +1,17 @@
+.reportExplanation {
+  margin-top: 1.2em;
+  font-size: 1.2em;
+}
+
+.stack {
+  margin-left: 1.2%;
+}
+
+.stackFrequency {
+  margin-top: 2.5em;
+  font-weight: bold;
+}
+
+.stackFrame {
+  margin-left: 1.2%;
+}

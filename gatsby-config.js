@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/fx-win32k-report",
   plugins: [
     `gatsby-transformer-json`,
     {
