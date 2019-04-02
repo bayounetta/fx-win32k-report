@@ -1,0 +1,85 @@
+# HG changeset patch
+# User Aaron Klotz <aklotz@mozilla.com>
+# Date 1501177479 21600
+#      Thu Jul 27 11:44:39 2017 -0600
+# Node ID f2e07bb990824f19be6309783899b670af371346
+# Parent  36f95aeb4c77f7cf3b3366583008cd6e4b6b1dba
+Bug 1385014: Switch MessageChannel::WaitForSyncNotifyWithA11yReentry to use WaitForSingleObjectEx instead of CoWaitForMultipleHandles to eliminate message pumping in content; r=jimm, billm
+
+MozReview-Commit-ID: AxPA2E7ZC7B
+
+diff --git a/ipc/glue/WindowsMessageLoop.cpp b/ipc/glue/WindowsMessageLoop.cpp
+--- a/ipc/glue/WindowsMessageLoop.cpp
++++ b/ipc/glue/WindowsMessageLoop.cpp
+@@ -968,49 +968,50 @@ MessageChannel::WaitForSyncNotifyWithA11
+ 
+   while (true) {
+     { // Scope for lock
+       MonitorAutoLock lock(*mMonitor);
+       if (!Connected()) {
+         break;
+       }
+     }
++
+     if (timeout != static_cast<DWORD>(kNoTimeout)) {
+       elapsed = ::GetTickCount() - waitStart;
+     }
++
+     if (elapsed >= timeout) {
+       timedOut = true;
+       break;
+     }
+-    DWORD waitResult = 0;
+-    ::SetLastError(ERROR_SUCCESS);
+-    HRESULT hr = ::CoWaitForMultipleHandles(COWAIT_ALERTABLE,
+-                                            timeout - elapsed,
+-                                            1, &mEvent, &waitResult);
+-    if (hr == RPC_S_CALLPENDING) {
++
++    DWORD waitResult = ::WaitForSingleObjectEx(mEvent, timeout - elapsed, TRUE);
++
++    if (waitResult == WAIT_TIMEOUT) {
+       timedOut = true;
+       break;
+     }
+-    if (hr == S_OK) {
+-      if (waitResult == 0) {
+-        // mEvent is signaled
+-        BOOL success = ::ResetEvent(mEvent);
+-        if (!success) {
+-          gfxDevCrash(mozilla::gfx::LogReason::MessageChannelInvalidHandle) <<
+-                      "WindowsMessageChannel::WaitForSyncNotifyWithA11yReentry failed to reset event. GetLastError: " <<
+-                      GetLastError();
+-        }
+-        break;
++
++    if (waitResult == WAIT_OBJECT_0) {
++      // mEvent is signaled
++      BOOL success = ::ResetEvent(mEvent);
++      if (!success) {
++        gfxDevCrash(mozilla::gfx::LogReason::MessageChannelInvalidHandle) <<
++                    "WindowsMessageChannel::WaitForSyncNotifyWithA11yReentry failed to reset event. GetLastError: " <<
++                    GetLastError();
+       }
+-      if (waitResult == WAIT_IO_COMPLETION) {
+-        // APC fired, keep waiting
+-        continue;
+-      }
++      break;
+     }
+-    NS_ERROR("CoWaitForMultipleHandles failed");
++
++    if (waitResult == WAIT_IO_COMPLETION) {
++      // APC fired, keep waiting
++      continue;
++    }
++
++    NS_ERROR("WaitForSingleObjectEx failed");
+     break;
+   }
+ 
+   return WaitResponse(timedOut);
+ }
+ #endif
+ 
+ bool

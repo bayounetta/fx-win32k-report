@@ -1,0 +1,589 @@
+# HG changeset patch
+# User Bob Owen <bobowencode@gmail.com>
+# Date 1543759347 0
+#      Sun Dec 02 14:02:27 2018 +0000
+# Node ID 0080e704c42b360bd8a010f338d2494ac4ccb6a5
+# Parent  fc01e86f7e8032341f66c023abce37589dd801a0
+Bug 1464032 Part 1: Fix unified build issues.
+
+diff --git a/gfx/layers/ProfilerScreenshots.cpp b/gfx/layers/ProfilerScreenshots.cpp
+--- a/gfx/layers/ProfilerScreenshots.cpp
++++ b/gfx/layers/ProfilerScreenshots.cpp
+@@ -1,16 +1,17 @@
+ /* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
+ /* vim: set ts=8 sts=2 et sw=2 tw=80: */
+ /* This Source Code Form is subject to the terms of the Mozilla Public
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+ #include "mozilla/layers/ProfilerScreenshots.h"
+ 
++#include "mozilla/SystemGroup.h"
+ #include "mozilla/TimeStamp.h"
+ 
+ #include "GeckoProfiler.h"
+ #include "gfxUtils.h"
+ #include "nsThreadUtils.h"
+ #ifdef MOZ_GECKO_PROFILER
+ #  include "ProfilerMarkerPayload.h"
+ #endif
+@@ -40,20 +41,20 @@ ProfilerScreenshots::~ProfilerScreenshot
+   return profiler_feature_active(ProfilerFeature::Screenshots);
+ #else
+   return false;
+ #endif
+ }
+ 
+ void ProfilerScreenshots::SubmitScreenshot(
+     uintptr_t aWindowIdentifier, const gfx::IntSize& aOriginalSize,
+-    const IntSize& aScaledSize, const TimeStamp& aTimeStamp,
+-    const std::function<bool(DataSourceSurface*)>& aPopulateSurface) {
++    const gfx::IntSize& aScaledSize, const TimeStamp& aTimeStamp,
++    const std::function<bool(gfx::DataSourceSurface*)>& aPopulateSurface) {
+ #ifdef MOZ_GECKO_PROFILER
+-  RefPtr<DataSourceSurface> backingSurface = TakeNextSurface();
++  RefPtr<gfx::DataSourceSurface> backingSurface = TakeNextSurface();
+   if (!backingSurface) {
+     return;
+   }
+ 
+   MOZ_RELEASE_ASSERT(aScaledSize <= backingSurface->GetSize());
+ 
+   bool succeeded = aPopulateSurface(backingSurface);
+ 
+@@ -74,33 +75,33 @@ void ProfilerScreenshots::SubmitScreensh
+           DOM);
+       ReturnSurface(backingSurface);
+       return;
+     }
+   }
+ 
+   int sourceThread = profiler_current_thread_id();
+   uintptr_t windowIdentifier = aWindowIdentifier;
+-  IntSize originalSize = aOriginalSize;
+-  IntSize scaledSize = aScaledSize;
++  gfx::IntSize originalSize = aOriginalSize;
++  gfx::IntSize scaledSize = aScaledSize;
+   TimeStamp timeStamp = aTimeStamp;
+ 
+   mThread->Dispatch(NS_NewRunnableFunction(
+       "ProfilerScreenshots::SubmitScreenshot",
+       [this, backingSurface, sourceThread, windowIdentifier, originalSize,
+        scaledSize, timeStamp]() {
+         // Create a new surface that wraps backingSurface's data but has the
+         // correct size.
+         {
+-          DataSourceSurface::ScopedMap scopedMap(backingSurface,
+-                                                 DataSourceSurface::READ);
+-          RefPtr<DataSourceSurface> surf =
+-              Factory::CreateWrappingDataSourceSurface(
++          DataSourceSurface::ScopedMap scopedMap(
++              backingSurface, gfx::DataSourceSurface::READ);
++          RefPtr<gfx::DataSourceSurface> surf =
++              gfx::Factory::CreateWrappingDataSourceSurface(
+                   scopedMap.GetData(), scopedMap.GetStride(), scaledSize,
+-                  SurfaceFormat::B8G8R8A8);
++                  gfx::SurfaceFormat::B8G8R8A8);
+ 
+           // Encode surf to a JPEG data URL.
+           nsCString dataURL;
+           nsresult rv = gfxUtils::EncodeSourceSurface(
+               surf, ImageType::JPEG, NS_LITERAL_STRING("quality=85"),
+               gfxUtils::eDataURIEncode, nullptr, &dataURL);
+           if (NS_SUCCEEDED(rv)) {
+             // Add a marker with the data URL.
+@@ -113,29 +114,30 @@ void ProfilerScreenshots::SubmitScreensh
+         }
+ 
+         // Return backingSurface back to the surface pool.
+         ReturnSurface(backingSurface);
+       }));
+ #endif
+ }
+ 
+-already_AddRefed<DataSourceSurface> ProfilerScreenshots::TakeNextSurface() {
++already_AddRefed<gfx::DataSourceSurface>
++ProfilerScreenshots::TakeNextSurface() {
+   MutexAutoLock mon(mMutex);
+   if (!mAvailableSurfaces.IsEmpty()) {
+-    RefPtr<DataSourceSurface> surf = mAvailableSurfaces[0];
++    RefPtr<gfx::DataSourceSurface> surf = mAvailableSurfaces[0];
+     mAvailableSurfaces.RemoveElementAt(0);
+     return surf.forget();
+   }
+   if (mLiveSurfaceCount >= 8) {
+     NS_WARNING(
+         "already 8 surfaces in flight, skipping capture for this composite");
+     return nullptr;
+   }
+   mLiveSurfaceCount++;
+-  return Factory::CreateDataSourceSurface(ScreenshotSize(),
+-                                          SurfaceFormat::B8G8R8A8);
++  return gfx::Factory::CreateDataSourceSurface(ScreenshotSize(),
++                                               gfx::SurfaceFormat::B8G8R8A8);
+ }
+ 
+-void ProfilerScreenshots::ReturnSurface(DataSourceSurface* aSurface) {
++void ProfilerScreenshots::ReturnSurface(gfx::DataSourceSurface* aSurface) {
+   MutexAutoLock mon(this->mMutex);
+   mAvailableSurfaces.AppendElement(aSurface);
+ }
+diff --git a/gfx/layers/ProfilerScreenshots.h b/gfx/layers/ProfilerScreenshots.h
+--- a/gfx/layers/ProfilerScreenshots.h
++++ b/gfx/layers/ProfilerScreenshots.h
+@@ -6,16 +6,19 @@
+ 
+ #ifndef mozilla_layers_ProfilerScreenshots_h
+ #define mozilla_layers_ProfilerScreenshots_h
+ 
+ #include <functional>
+ 
+ #include "mozilla/Mutex.h"
+ #include "mozilla/RefPtr.h"
++#include "mozilla/TimeStamp.h"
++#include "nsCOMPtr.h"
++#include "nsTArray.h"
+ 
+ #include "mozilla/gfx/Point.h"
+ 
+ class nsIThread;
+ 
+ namespace mozilla {
+ 
+ namespace gfx {
+@@ -76,29 +79,29 @@ class ProfilerScreenshots final {
+ 
+  private:
+   /**
+    * Recycle a surface from mAvailableSurfaces or create a new one if all
+    * surfaces are currently in use, up to some maximum limit.
+    * Returns null if the limit is reached.
+    * Can be called on any thread.
+    */
+-  already_AddRefed<DataSourceSurface> TakeNextSurface();
++  already_AddRefed<gfx::DataSourceSurface> TakeNextSurface();
+ 
+   /**
+    * Return aSurface back into the mAvailableSurfaces pool. Can be called on
+    * any thread.
+    */
+-  void ReturnSurface(DataSourceSurface* aSurface);
++  void ReturnSurface(gfx::DataSourceSurface* aSurface);
+ 
+   // The thread on which encoding happens.
+   nsCOMPtr<nsIThread> mThread;
+   // An array of surfaces ready to be recycled. Can be accessed from multiple
+   // threads, protected by mMutex.
+-  nsTArray<RefPtr<DataSourceSurface>> mAvailableSurfaces;
++  nsTArray<RefPtr<gfx::DataSourceSurface>> mAvailableSurfaces;
+   // Protects mAvailableSurfaces.
+   Mutex mMutex;
+   // The total number of surfaces created. If encoding is fast enough to happen
+   // entirely in the time between two calls to SubmitScreenshot, this should
+   // never exceed 1.
+   uint32_t mLiveSurfaceCount;
+ };
+ 
+diff --git a/gfx/layers/ShareableCanvasRenderer.cpp b/gfx/layers/ShareableCanvasRenderer.cpp
+--- a/gfx/layers/ShareableCanvasRenderer.cpp
++++ b/gfx/layers/ShareableCanvasRenderer.cpp
+@@ -87,23 +87,23 @@ void ShareableCanvasRenderer::Destroy() 
+   CopyableCanvasRenderer::Destroy();
+ 
+   if (mCanvasClient) {
+     mCanvasClient->OnDetach();
+     mCanvasClient = nullptr;
+   }
+ }
+ 
+-bool ShareableCanvasRenderer::UpdateTarget(DrawTarget* aDestTarget) {
++bool ShareableCanvasRenderer::UpdateTarget(gfx::DrawTarget* aDestTarget) {
+   MOZ_ASSERT(aDestTarget);
+   if (!aDestTarget) {
+     return false;
+   }
+ 
+-  RefPtr<SourceSurface> surface;
++  RefPtr<gfx::SourceSurface> surface;
+ 
+   if (!mGLContext) {
+     AutoReturnSnapshot autoReturn;
+ 
+     if (mAsyncRenderer) {
+       surface = mAsyncRenderer->GetSurface();
+     } else if (mBufferProvider) {
+       surface = mBufferProvider->BorrowSnapshot();
+@@ -111,18 +111,19 @@ bool ShareableCanvasRenderer::UpdateTarg
+       autoReturn.mBufferProvider = mBufferProvider;
+     }
+ 
+     MOZ_ASSERT(surface);
+     if (!surface) {
+       return false;
+     }
+ 
+-    aDestTarget->CopySurface(surface, IntRect(0, 0, mSize.width, mSize.height),
+-                             IntPoint(0, 0));
++    aDestTarget->CopySurface(surface,
++                             gfx::IntRect(0, 0, mSize.width, mSize.height),
++                             gfx::IntPoint(0, 0));
+     return true;
+   }
+ 
+   gl::SharedSurface* frontbuffer = nullptr;
+   if (mGLFrontbuffer) {
+     frontbuffer = mGLFrontbuffer.get();
+   } else {
+     gl::GLScreenBuffer* screen = mGLContext->Screen();
+@@ -132,61 +133,62 @@ bool ShareableCanvasRenderer::UpdateTarg
+     }
+   }
+ 
+   if (!frontbuffer) {
+     NS_WARNING("Null frame received.");
+     return false;
+   }
+ 
+-  IntSize readSize(frontbuffer->mSize);
+-  SurfaceFormat format =
+-      mOpaque ? SurfaceFormat::B8G8R8X8 : SurfaceFormat::B8G8R8A8;
++  gfx::IntSize readSize(frontbuffer->mSize);
++  gfx::SurfaceFormat format =
++      mOpaque ? gfx::SurfaceFormat::B8G8R8X8 : gfx::SurfaceFormat::B8G8R8A8;
+   bool needsPremult = frontbuffer->mHasAlpha && !mIsAlphaPremultiplied;
+ 
+   // Try to read back directly into aDestTarget's output buffer
+   uint8_t* destData;
+-  IntSize destSize;
++  gfx::IntSize destSize;
+   int32_t destStride;
+-  SurfaceFormat destFormat;
++  gfx::SurfaceFormat destFormat;
+   if (aDestTarget->LockBits(&destData, &destSize, &destStride, &destFormat)) {
+     if (destSize == readSize && destFormat == format) {
+-      RefPtr<DataSourceSurface> data = Factory::CreateWrappingDataSourceSurface(
+-          destData, destStride, destSize, destFormat);
++      RefPtr<gfx::DataSourceSurface> data =
++          gfx::Factory::CreateWrappingDataSourceSurface(destData, destStride,
++                                                        destSize, destFormat);
+       if (!mGLContext->Readback(frontbuffer, data)) {
+         aDestTarget->ReleaseBits(destData);
+         return false;
+       }
+       if (needsPremult) {
+         gfxUtils::PremultiplyDataSurface(data, data);
+       }
+       aDestTarget->ReleaseBits(destData);
+       return true;
+     }
+     aDestTarget->ReleaseBits(destData);
+   }
+ 
+-  RefPtr<DataSourceSurface> resultSurf = GetTempSurface(readSize, format);
++  RefPtr<gfx::DataSourceSurface> resultSurf = GetTempSurface(readSize, format);
+   // There will already be a warning from inside of GetTempSurface, but
+   // it doesn't hurt to complain:
+   if (NS_WARN_IF(!resultSurf)) {
+     return false;
+   }
+ 
+   // Readback handles Flush/MarkDirty.
+   if (!mGLContext->Readback(frontbuffer, resultSurf)) {
+     return false;
+   }
+   if (needsPremult) {
+     gfxUtils::PremultiplyDataSurface(resultSurf, resultSurf);
+   }
+ 
+   aDestTarget->CopySurface(resultSurf,
+-                           IntRect(0, 0, readSize.width, readSize.height),
+-                           IntPoint(0, 0));
++                           gfx::IntRect(0, 0, readSize.width, readSize.height),
++                           gfx::IntPoint(0, 0));
+ 
+   return true;
+ }
+ 
+ CanvasClient::CanvasClientType ShareableCanvasRenderer::GetCanvasClientType() {
+   if (mAsyncRenderer) {
+     return CanvasClient::CanvasClientAsync;
+   }
+diff --git a/gfx/layers/SourceSurfaceSharedData.cpp b/gfx/layers/SourceSurfaceSharedData.cpp
+--- a/gfx/layers/SourceSurfaceSharedData.cpp
++++ b/gfx/layers/SourceSurfaceSharedData.cpp
+@@ -87,17 +87,18 @@ void SourceSurfaceSharedData::AddSizeOfE
+     size_t& aExtHandlesOut, uint64_t& aExtIdOut) const {
+   MutexAutoLock lock(mMutex);
+   if (mBuf) {
+     aNonHeapSizeOut += GetAlignedDataLength();
+   }
+   if (!mClosed) {
+     ++aExtHandlesOut;
+   }
+-  Maybe<wr::ExternalImageId> extId = SharedSurfacesChild::GetExternalId(this);
++  Maybe<wr::ExternalImageId> extId =
++      layers::SharedSurfacesChild::GetExternalId(this);
+   if (extId) {
+     aExtIdOut = wr::AsUint64(extId.ref());
+   }
+ }
+ 
+ uint8_t* SourceSurfaceSharedData::GetDataInternal() const {
+   mMutex.AssertCurrentThreadOwns();
+ 
+diff --git a/gfx/layers/apz/public/IAPZCTreeManager.h b/gfx/layers/apz/public/IAPZCTreeManager.h
+--- a/gfx/layers/apz/public/IAPZCTreeManager.h
++++ b/gfx/layers/apz/public/IAPZCTreeManager.h
+@@ -6,16 +6,17 @@
+ 
+ #ifndef mozilla_layers_IAPZCTreeManager_h
+ #define mozilla_layers_IAPZCTreeManager_h
+ 
+ #include <stdint.h>  // for uint64_t, uint32_t
+ 
+ #include "mozilla/layers/LayersTypes.h"          // for TouchBehaviorFlags
+ #include "mozilla/layers/ScrollableLayerGuid.h"  // for ScrollableLayerGuid, etc
++#include "mozilla/layers/ZoomConstraints.h"
+ #include "nsTArrayForwardDeclare.h"  // for nsTArray, nsTArray_Impl, etc
+ #include "nsISupportsImpl.h"         // for MOZ_COUNT_CTOR, etc
+ #include "Units.h"                   // for CSSRect, etc
+ 
+ namespace mozilla {
+ namespace layers {
+ 
+ class APZInputBridge;
+diff --git a/gfx/layers/composite/CompositorScreenshotGrabber.cpp b/gfx/layers/composite/CompositorScreenshotGrabber.cpp
+--- a/gfx/layers/composite/CompositorScreenshotGrabber.cpp
++++ b/gfx/layers/composite/CompositorScreenshotGrabber.cpp
+@@ -5,17 +5,19 @@
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+ #include "CompositorScreenshotGrabber.h"
+ 
+ #include "mozilla/RefPtr.h"
+ #include "mozilla/TimeStamp.h"
+ #include "mozilla/UniquePtr.h"
+ 
++#include "mozilla/layers/Compositor.h"
+ #include "mozilla/layers/ProfilerScreenshots.h"
++#include "mozilla/layers/TextureHost.h"
+ #include "mozilla/gfx/Point.h"
+ #include "nsTArray.h"
+ 
+ namespace mozilla {
+ 
+ using namespace gfx;
+ 
+ namespace layers {
+diff --git a/gfx/layers/composite/CompositorScreenshotGrabber.h b/gfx/layers/composite/CompositorScreenshotGrabber.h
+--- a/gfx/layers/composite/CompositorScreenshotGrabber.h
++++ b/gfx/layers/composite/CompositorScreenshotGrabber.h
+@@ -7,16 +7,17 @@
+ #ifndef mozilla_layers_CompositorScreenshotGrabber_h
+ #define mozilla_layers_CompositorScreenshotGrabber_h
+ 
+ #include "mozilla/UniquePtr.h"
+ 
+ namespace mozilla {
+ namespace layers {
+ 
++class Compositor;
+ class CompositorScreenshotGrabberImpl;
+ 
+ /**
+  * Used by LayerManagerComposite to grab snapshots from the compositor and
+  * submit them to the Gecko profiler.
+  * Doesn't do any work if the profiler is not running or the "screenshots"
+  * feature is not enabled.
+  * Screenshots are scaled down to fit within a fixed size, and read back to
+diff --git a/gfx/layers/d3d11/MLGDeviceD3D11.cpp b/gfx/layers/d3d11/MLGDeviceD3D11.cpp
+--- a/gfx/layers/d3d11/MLGDeviceD3D11.cpp
++++ b/gfx/layers/d3d11/MLGDeviceD3D11.cpp
+@@ -6,23 +6,25 @@
+ 
+ #include "MLGDeviceD3D11.h"
+ #include "mozilla/ArrayUtils.h"
+ #include "mozilla/Telemetry.h"
+ #include "mozilla/WindowsVersion.h"
+ #include "mozilla/gfx/GPUParent.h"
+ #include "mozilla/gfx/StackArray.h"
+ #include "mozilla/layers/DiagnosticsD3D11.h"
++#include "mozilla/layers/HelpersD3D11.h"
+ #include "mozilla/layers/LayerMLGPU.h"
+ #include "mozilla/layers/MemoryReportingMLGPU.h"
+ #include "mozilla/layers/ShaderDefinitionsMLGPU.h"
+ #include "mozilla/layers/UtilityMLGPU.h"
+ #include "mozilla/widget/CompositorWidget.h"
+ #include "mozilla/widget/WinCompositorWidget.h"
+ #include "MLGShaders.h"
++#include "LayersLogging.h"
+ #include "TextureD3D11.h"
+ #include "gfxConfig.h"
+ #include "gfxPrefs.h"
+ 
+ namespace mozilla {
+ namespace layers {
+ 
+ using namespace mozilla::gfx;
+diff --git a/gfx/layers/d3d11/TextureD3D11.cpp b/gfx/layers/d3d11/TextureD3D11.cpp
+--- a/gfx/layers/d3d11/TextureD3D11.cpp
++++ b/gfx/layers/d3d11/TextureD3D11.cpp
+@@ -6,22 +6,24 @@
+ 
+ #include "TextureD3D11.h"
+ #include "CompositorD3D11.h"
+ #include "gfxContext.h"
+ #include "Effects.h"
+ #include "gfxWindowsPlatform.h"
+ #include "gfx2DGlue.h"
+ #include "gfxPrefs.h"
++#include "MainThreadUtils.h"
+ #include "ReadbackManagerD3D11.h"
+ #include "mozilla/gfx/DataSurfaceHelpers.h"
+ #include "mozilla/gfx/DeviceManagerDx.h"
+ #include "mozilla/gfx/gfxVars.h"
+ #include "mozilla/gfx/Logging.h"
+ #include "mozilla/layers/CompositorBridgeChild.h"
++#include "mozilla/Telemetry.h"
+ #include "mozilla/webrender/RenderD3D11TextureHostOGL.h"
+ #include "mozilla/webrender/RenderThread.h"
+ #include "mozilla/webrender/WebRenderAPI.h"
+ #include "PaintThread.h"
+ 
+ namespace mozilla {
+ 
+ using namespace gfx;
+diff --git a/gfx/layers/ipc/CrossProcessCompositorBridgeParent.cpp b/gfx/layers/ipc/CrossProcessCompositorBridgeParent.cpp
+--- a/gfx/layers/ipc/CrossProcessCompositorBridgeParent.cpp
++++ b/gfx/layers/ipc/CrossProcessCompositorBridgeParent.cpp
+@@ -30,16 +30,20 @@
+ #include "mozilla/layers/WebRenderBridgeParent.h"
+ #include "mozilla/layers/AsyncImagePipelineManager.h"
+ #include "mozilla/mozalloc.h"  // for operator new, etc
+ #include "nsDebug.h"           // for NS_ASSERTION, etc
+ #include "nsTArray.h"          // for nsTArray
+ #include "nsXULAppAPI.h"       // for XRE_GetIOMessageLoop
+ #include "mozilla/Unused.h"
+ #include "mozilla/StaticPtr.h"
++#include "mozilla/Telemetry.h"
++#ifdef MOZ_GECKO_PROFILER
++#include "ProfilerMarkerPayload.h"
++#endif
+ 
+ using namespace std;
+ 
+ namespace mozilla {
+ 
+ namespace layers {
+ 
+ // defined in CompositorBridgeParent.cpp
+@@ -299,22 +303,22 @@ CrossProcessCompositorBridgeParent::Recv
+   return IPC_FAIL_NO_REASON(this);
+ }
+ 
+ mozilla::ipc::IPCResult
+ CrossProcessCompositorBridgeParent::RecvCheckContentOnlyTDR(
+     const uint32_t& sequenceNum, bool* isContentOnlyTDR) {
+   *isContentOnlyTDR = false;
+ #ifdef XP_WIN
+-  ContentDeviceData compositor;
++  gfx::ContentDeviceData compositor;
+ 
+-  DeviceManagerDx* dm = DeviceManagerDx::Get();
++  gfx::DeviceManagerDx* dm = gfx::DeviceManagerDx::Get();
+ 
+   // Check that the D3D11 device sequence numbers match.
+-  D3D11DeviceStatus status;
++  gfx::D3D11DeviceStatus status;
+   dm->ExportDeviceInfo(&status);
+ 
+   if (sequenceNum == status.sequenceNumber() && !dm->HasDeviceReset()) {
+     *isContentOnlyTDR = true;
+   }
+ 
+ #endif
+   return IPC_OK();
+diff --git a/gfx/layers/ipc/UiCompositorControllerParent.cpp b/gfx/layers/ipc/UiCompositorControllerParent.cpp
+--- a/gfx/layers/ipc/UiCompositorControllerParent.cpp
++++ b/gfx/layers/ipc/UiCompositorControllerParent.cpp
+@@ -7,16 +7,17 @@
+ 
+ #if defined(MOZ_WIDGET_ANDROID)
+ #  include "apz/src/APZCTreeManager.h"
+ #endif
+ #include "mozilla/layers/Compositor.h"
+ #include "mozilla/layers/CompositorBridgeParent.h"
+ #include "mozilla/layers/CompositorThread.h"
+ #include "mozilla/layers/LayerManagerComposite.h"
++#include "mozilla/layers/UiCompositorControllerMessageTypes.h"
+ #include "mozilla/gfx/Types.h"
+ #include "mozilla/Move.h"
+ #include "mozilla/Unused.h"
+ 
+ #include "FrameMetrics.h"
+ #include "SynchronousTask.h"
+ 
+ namespace mozilla {
+diff --git a/gfx/layers/wr/WebRenderBridgeParent.h b/gfx/layers/wr/WebRenderBridgeParent.h
+--- a/gfx/layers/wr/WebRenderBridgeParent.h
++++ b/gfx/layers/wr/WebRenderBridgeParent.h
+@@ -7,16 +7,17 @@
+ #ifndef mozilla_layers_WebRenderBridgeParent_h
+ #define mozilla_layers_WebRenderBridgeParent_h
+ 
+ #include <unordered_map>
+ #include <unordered_set>
+ 
+ #include "CompositableHost.h"  // for CompositableHost, ImageCompositeNotificationInfo
+ #include "GLContextProvider.h"
++#include "Layers.h"
+ #include "mozilla/layers/CompositableTransactionParent.h"
+ #include "mozilla/layers/CompositorVsyncSchedulerOwner.h"
+ #include "mozilla/layers/PWebRenderBridgeParent.h"
+ #include "mozilla/layers/UiCompositorControllerParent.h"
+ #include "mozilla/Maybe.h"
+ #include "mozilla/UniquePtr.h"
+ #include "mozilla/webrender/WebRenderTypes.h"
+ #include "mozilla/webrender/WebRenderAPI.h"
+diff --git a/gfx/layers/wr/WebRenderCommandBuilder.cpp b/gfx/layers/wr/WebRenderCommandBuilder.cpp
+--- a/gfx/layers/wr/WebRenderCommandBuilder.cpp
++++ b/gfx/layers/wr/WebRenderCommandBuilder.cpp
+@@ -7,16 +7,17 @@
+ #include "WebRenderCommandBuilder.h"
+ 
+ #include "BasicLayers.h"
+ #include "mozilla/AutoRestore.h"
+ #include "mozilla/DebugOnly.h"
+ #include "mozilla/gfx/2D.h"
+ #include "mozilla/gfx/Logging.h"
+ #include "mozilla/gfx/Types.h"
++#include "mozilla/layers/AnimationHelper.h"
+ #include "mozilla/layers/ClipManager.h"
+ #include "mozilla/layers/ImageClient.h"
+ #include "mozilla/layers/RenderRootStateManager.h"
+ #include "mozilla/layers/WebRenderBridgeChild.h"
+ #include "mozilla/layers/WebRenderLayerManager.h"
+ #include "mozilla/layers/IpcResourceUpdateQueue.h"
+ #include "mozilla/layers/SharedSurfacesChild.h"
+ #include "mozilla/layers/SourceSurfaceSharedData.h"
+diff --git a/gfx/webrender_bindings/WebRenderAPI.h b/gfx/webrender_bindings/WebRenderAPI.h
+--- a/gfx/webrender_bindings/WebRenderAPI.h
++++ b/gfx/webrender_bindings/WebRenderAPI.h
+@@ -12,16 +12,17 @@
+ #include <unordered_set>
+ 
+ #include "mozilla/AlreadyAddRefed.h"
+ #include "mozilla/gfx/CompositorHitTestInfo.h"
+ #include "mozilla/layers/IpcResourceUpdateQueue.h"
+ #include "mozilla/layers/ScrollableLayerGuid.h"
+ #include "mozilla/layers/SyncObject.h"
+ #include "mozilla/Range.h"
++#include "mozilla/TimeStamp.h"
+ #include "mozilla/webrender/webrender_ffi.h"
+ #include "mozilla/webrender/WebRenderTypes.h"
+ #include "GLTypes.h"
+ #include "Units.h"
+ 
+ class nsDisplayItem;
+ class nsDisplayTransform;
+ 
