@@ -17,6 +17,7 @@ export default () => (
         <Link to="/webrtcReport">05-webrtc-report.json</Link>
         <Link to="/printingReport">06-printing-report.json</Link>
         <Link to="/allBreakpointsReport">07-all-breakpoints-report.json</Link>
+        <Link to="/testPluginReport">08-all-breakpoints-report.json</Link>
       </div>
     </div>
   </div>
