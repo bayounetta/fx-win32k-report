@@ -10,8 +10,9 @@ export default ({ data }) => (
     <Header />
     <div className="page">
       <h3>03 - video - report</h3>
+      <h3>this log last generated at: 4/15/2019, 8:42:52 AM</h3>
       <p className={logStyles.reportExplanation}>
-        This is a log capturing video playback of red pandas on YouTube.
+        This is a log capturing webm video playback.
       </p>
       <div className={logStyles.stack}>
         {data.allVideoReportJson.edges.map((node) => (

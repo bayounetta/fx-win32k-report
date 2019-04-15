@@ -48,32 +48,29 @@ export default () => (
         </a>
       </p>
       <p>
-        <a href="https://www.youtube.com/watch?v=h6S_zdlce2Q">
-          youtube video playback
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video">
+          webm video playback
         </a>
       </p>
       <p>
-        <a href="https://phaser.io/examples/v2/games/breakout">
+        <a href="https://phaser.io/examples/v2/games/invaders">
           phaser based games
         </a>
       </p>
       <p>
-        <a href="https://webrtc.github.io/samples/src/content/peerconnection/upgrade/">
-          webrtc peer test connection
+        <a href="https://searchfox.org/mozilla-central/source/dom/media/tests/mochitest">
+          firefox webrtc peer connection tests
         </a>
       </p>
       <p>
         <a href="https://www.mozilla.org/">mozilla.org (page printing)</a>
       </p>
+      <p>
+        <a href="https://searchfox.org/mozilla-central/source/dom/plugins/test/mochitest">
+          firefox test-plugin tests
+        </a>
+      </p>
       <br />
-
-      <div>
-        <p>The only NT functions that were excluded from these tests are</p>
-        <i>NtUserPeekMessage, </i>
-        <i>NtUserValidateHandleSecure, </i>
-        <i>NtUserPostMessage, </i>
-        <i>NtGdiDdDDIGetDeviceState</i>
-      </div>
     </div>
   </div>
 );

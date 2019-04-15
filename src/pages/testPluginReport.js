@@ -9,7 +9,8 @@ export default ({ data }) => (
   <div>
     <Header />
     <div className="page">
-      <h3>08 - test plugin - report</h3>
+      <h3>07 - test plugin - report</h3>
+      <h3>this log last generated at: 4/15/2019, 8:42:52 AM</h3>
       <p className={logStyles.reportExplanation}>
         This is a log capturing the non-crashing tests under /dom/plugins/test/mochitest.
       </p>

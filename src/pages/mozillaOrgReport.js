@@ -10,6 +10,7 @@ export default ({ data }) => (
     <Header />
     <div className="page">
       <h3>01 - mozilla.org - report</h3>
+      <h3>this log last generated at: 4/15/2019, 8:42:52 AM</h3>
       <p className={logStyles.reportExplanation}>
         This is a log capturing loading a single page.
       </p>

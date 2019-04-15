@@ -10,6 +10,7 @@ export default ({ data }) => (
     <Header />
     <div className="page">
       <h3>00 - full - report</h3>
+      <h3>this log last generated at: 4/15/2019, 8:42:52 AM</h3>
       <p className={logStyles.reportExplanation}>This is a concatenated report of all the generated win32k usage logs.</p>
       <div className={logStyles.stack}>
         {data.allFullReportJson.edges.map((node) => (

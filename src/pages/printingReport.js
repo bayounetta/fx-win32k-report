@@ -10,6 +10,7 @@ export default ({ data }) => (
     <Header />
     <div className="page">
       <h3>06 - printing - report</h3>
+      <h3>this log last generated at: 4/15/2019, 8:42:52 AM</h3>
       <p className={logStyles.reportExplanation}>
         This is a log capturing navigation to mozilla.org followed by printing the
         page to pdf.
