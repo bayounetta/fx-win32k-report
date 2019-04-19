@@ -7,8 +7,8 @@ export default () => (
     <Header />
     <div className="page">
       <h3>
-        This project site tracks the changes week to week in NT function usage in
-        content processes, specifically related to{' '}
+        This project site tracks the changes week to week in NT function usage
+        in content processes, specifically related to{' '}
         <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1381019">
           win32k usage.
         </a>
@@ -35,8 +35,8 @@ export default () => (
       <br />
 
       <p>
-        A few test cases have been selected to try to enumerate as many call sites
-        as possible.
+        A few test cases have been selected to try to enumerate as many call
+        sites as possible.
       </p>
       <p>They include:</p>
       <p>
@@ -71,6 +71,16 @@ export default () => (
         </a>
       </p>
       <br />
+      <p>
+        These reports are automatically generated, committed, and published from
+        a machine at my desk. The version of Firefox used to generate these
+        reports is [mozilla central](https://hg.mozilla.org/mozilla-central/)
+        along with a small collection of patches in the `/patches`
+        [folder.](patches/) `media.cubeb.sandbox`, `gfx.canvas.remote`,
+        `webgl.disabled`, `mozilla.widget.disable-native-theme`, and
+        `gfx.webrender.enabled` have been set to `true` in `about:config` and
+        `content process limit` has been set to `1` in `about:preferences`.
+      </p>
     </div>
   </div>
 );
