@@ -1,0 +1,2566 @@
+64 - win32u!NtGdiCreateCompatibleDC
+    win32u!NtGdiCreateCompatibleDC
+    gdi32full!CreateCompatibleDC+0x14
+    xul!_create_dc_and_bitmap+0x583
+    xul!_cairo_win32_surface_create_for_dc+0xfe
+    xul!_moz_cairo_win32_surface_create_with_dib+0x2e
+    xul!gfxWindowsSurface::gfxWindowsSurface+0xaf
+    xul!gfxWindowsNativeDrawing::BeginNativeDrawing+0x9d4
+    xul!nsNativeThemeWin::DrawWidgetBackground+0x635
+
+
+64 - win32u!NtGdiDrawStream
+    win32u!NtGdiDrawStream
+    gdi32full!GdiDrawStream+0x5d
+    UxTheme!CImageFile::DrawBackgroundDS+0x2a8
+    UxTheme!CImageFile::DrawImageInfo+0x243
+    UxTheme!CImageFile::DrawBackground+0x66
+    UxTheme!DrawThemeBackground+0x300
+    xul!nsNativeThemeWin::DrawWidgetBackground+0x1877
+    xul!nsDisplayThemedBackground::PaintInternal+0x1e7
+    xul!nsDisplayThemedBackground::Paint+0x56
+    xul!mozilla::FrameLayerBuilder::PaintItems+0xc96
+    xul!mozilla::FrameLayerBuilder::DrawPaintedLayer+0x86b
+    xul!mozilla::layers::ClientSingleTiledLayerBuffer::PaintThebes+0xe70
+
+
+64 - win32u!NtGdiDeleteObjectApp
+    win32u!NtGdiDeleteObjectApp
+    GDI32!InternalDeleteObject+0x2a3
+    GDI32!DeleteObject+0xe
+    xul!_cairo_win32_surface_finish+0x82
+    xul!_moz_cairo_surface_finish+0xb1
+    xul!_moz_cairo_surface_destroy+0x113
+    xul!gfxASurface::Release+0x87
+    xul!mozilla::RefPtrTraits<gfxWindowsSurface>::Release+0x13
+    xul!RefPtr<gfxWindowsSurface>::ConstRemovingRefPtrTraits<gfxWindowsSurface>::Release+0x13
+
+
+64 - win32u!NtGdiDeleteObjectApp
+    win32u!NtGdiDeleteObjectApp
+    GDI32!InternalDeleteDC+0x236
+    GDI32!DeleteDC+0x13
+    xul!_cairo_win32_surface_finish+0x98
+    xul!_moz_cairo_surface_finish+0xb1
+    xul!_moz_cairo_surface_destroy+0x113
+    xul!gfxASurface::Release+0x87
+    xul!mozilla::RefPtrTraits<gfxWindowsSurface>::Release+0x13
+    xul!RefPtr<gfxWindowsSurface>::ConstRemovingRefPtrTraits<gfxWindowsSurface>::Release+0x13
+
+
+64 - win32u!NtGdiFlush
+    win32u!NtGdiFlush
+    gdi32full!GdiFlush+0xb
+    xul!_create_dc_and_bitmap+0x634
+    xul!_cairo_win32_surface_create_for_dc+0xfe
+    xul!_moz_cairo_win32_surface_create_with_dib+0x2e
+    xul!gfxWindowsSurface::gfxWindowsSurface+0xaf
+    xul!gfxWindowsNativeDrawing::BeginNativeDrawing+0x9d4
+    xul!nsNativeThemeWin::DrawWidgetBackground+0x635
+
+
+64 - win32u!NtGdiSelectBitmap
+    win32u!NtGdiSelectBitmap
+    gdi32full!SelectObjectImpl+0x1f6
+    xul!_create_dc_and_bitmap+0x669
+    xul!_cairo_win32_surface_create_for_dc+0xfe
+    xul!_moz_cairo_win32_surface_create_with_dib+0x2e
+    xul!gfxWindowsSurface::gfxWindowsSurface+0xaf
+    xul!gfxWindowsNativeDrawing::BeginNativeDrawing+0x9d4
+    xul!nsNativeThemeWin::DrawWidgetBackground+0x635
+
+
+64 - win32u!NtGdiCreateDIBSection
+    win32u!NtGdiCreateDIBSection
+    gdi32full!CreateDIBSectionInternal+0x18c
+    gdi32full!CreateDIBSection+0x25
+    GDI32!CreateDIBSectionStub+0x55
+    xul!_create_dc_and_bitmap+0x5f2
+    xul!_cairo_win32_surface_create_for_dc+0xfe
+    xul!_moz_cairo_win32_surface_create_with_dib+0x2e
+    xul!gfxWindowsSurface::gfxWindowsSurface+0xaf
+    xul!gfxWindowsNativeDrawing::BeginNativeDrawing+0x9d4
+    xul!nsNativeThemeWin::DrawWidgetBackground+0x635
+
+
+64 - win32u!NtGdiSelectBitmap
+    win32u!NtGdiSelectBitmap
+    gdi32full!SelectObjectImpl+0x1f6
+    xul!_cairo_win32_surface_finish+0x6b
+    xul!_moz_cairo_surface_finish+0xb1
+    xul!_moz_cairo_surface_destroy+0x113
+    xul!gfxASurface::Release+0x87
+    xul!mozilla::RefPtrTraits<gfxWindowsSurface>::Release+0x13
+    xul!RefPtr<gfxWindowsSurface>::ConstRemovingRefPtrTraits<gfxWindowsSurface>::Release+0x13
+
+
+56 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!RealGetSystemMetrics+0x121
+    UxTheme!ThemeGetSystemMetrics+0x24
+    user32!GetSystemMetrics+0x80
+    xul!nsNativeThemeWin::ClassicGetMinimumWidgetSize+0x35a
+    xul!nsNativeThemeWin::GetMinimumWidgetSize+0x2ca
+    xul!nsIFrame::AddXULMinSize+0x1e9
+    xul!nsBoxFrame::GetXULMinSize+0x169
+    xul!nsBoxFrame::GetXULPrefSize+0x29c
+    xul!nsSprocketLayout::GetXULPrefSize+0x14f
+
+
+56 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!RealGetSystemMetrics+0x121
+    UxTheme!ThemeGetSystemMetrics+0x24
+    user32!GetSystemMetrics+0x80
+    xul!nsNativeThemeWin::ClassicGetMinimumWidgetSize+0x348
+    xul!nsNativeThemeWin::GetMinimumWidgetSize+0x2ca
+    xul!nsIFrame::AddXULMinSize+0x1e9
+    xul!nsBoxFrame::GetXULMinSize+0x169
+    xul!nsBoxFrame::GetXULPrefSize+0x29c
+    xul!nsSprocketLayout::GetXULPrefSize+0x14f
+
+
+52 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!RealGetSystemMetrics+0x121
+    UxTheme!ThemeGetSystemMetrics+0x24
+    user32!GetSystemMetrics+0x80
+    xul!nsNativeThemeWin::ClassicGetMinimumWidgetSize+0x3d8
+    xul!nsNativeThemeWin::GetMinimumWidgetSize+0x2ca
+    xul!nsIFrame::AddXULMinSize+0x1e9
+    xul!nsBoxFrame::GetXULMinSize+0x169
+    xul!nsBoxFrame::GetXULPrefSize+0x29c
+    xul!nsSprocketLayout::GetXULPrefSize+0x14f
+
+
+50 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!RealGetSystemMetrics+0x121
+    UxTheme!ThemeGetSystemMetrics+0x24
+    user32!GetSystemMetrics+0x80
+    xul!nsNativeThemeWin::ClassicGetMinimumWidgetSize+0x3c6
+    xul!nsNativeThemeWin::GetMinimumWidgetSize+0x2ca
+    xul!nsIFrame::AddXULMinSize+0x1e9
+    xul!nsBoxFrame::GetXULMinSize+0x169
+    xul!nsBoxFrame::GetXULPrefSize+0x29c
+    xul!nsSprocketLayout::GetXULPrefSize+0x14f
+
+
+36 - win32u!NtGdiDrawStream
+    win32u!NtGdiDrawStream
+    gdi32full!GdiDrawStream+0x5d
+    UxTheme!CImageFile::DrawBackgroundDS+0x2a8
+    UxTheme!CImageFile::DrawImageInfo+0x243
+    UxTheme!CImageFile::DrawBackground+0x10d
+    UxTheme!DrawThemeBackground+0x3a7
+    xul!nsNativeThemeWin::DrawWidgetBackground+0x1877
+    xul!nsDisplayThemedBackground::PaintInternal+0x1e7
+    xul!nsDisplayThemedBackground::Paint+0x56
+    xul!mozilla::FrameLayerBuilder::PaintItems+0xc96
+    xul!mozilla::FrameLayerBuilder::DrawPaintedLayer+0x86b
+    xul!mozilla::layers::ClientSingleTiledLayerBuffer::PaintThebes+0xe70
+
+
+36 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!RealGetSystemMetrics+0x121
+    UxTheme!ThemeGetSystemMetrics+0x24
+    user32!GetSystemMetrics+0x80
+    xul!nsNativeThemeWin::ClassicGetMinimumWidgetSize+0x193
+    xul!nsNativeThemeWin::GetMinimumWidgetSize+0x2ca
+    xul!nsIFrame::AddXULMinSize+0x1e9
+    xul!nsBoxFrame::GetXULMinSize+0x169
+    xul!nsSprocketLayout::GetXULMinSize+0x161
+    xul!nsBoxFrame::GetXULMinSize+0x1d9
+
+
+36 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!RealGetSystemMetrics+0x121
+    UxTheme!ThemeGetSystemMetrics+0x24
+    user32!GetSystemMetrics+0x80
+    xul!nsNativeThemeWin::ClassicGetMinimumWidgetSize+0x1a5
+    xul!nsNativeThemeWin::GetMinimumWidgetSize+0x2ca
+    xul!nsIFrame::AddXULMinSize+0x1e9
+    xul!nsBoxFrame::GetXULMinSize+0x169
+    xul!nsSprocketLayout::GetXULMinSize+0x161
+    xul!nsBoxFrame::GetXULMinSize+0x1d9
+
+
+32 - win32u!NtGdiPolyPatBlt
+    win32u!NtGdiPolyPatBlt
+    gdi32full!PolyPatBlt+0x156
+    user32!FillRect+0x59
+    xul!gfxWindowsNativeDrawing::BeginNativeDrawing+0xac1
+    xul!nsNativeThemeWin::DrawWidgetBackground+0x635
+    xul!nsDisplayThemedBackground::PaintInternal+0x1e7
+    xul!nsDisplayThemedBackground::Paint+0x56
+    xul!mozilla::FrameLayerBuilder::PaintItems+0xc96
+    xul!mozilla::FrameLayerBuilder::DrawPaintedLayer+0x86b
+
+
+32 - win32u!NtGdiPolyPatBlt
+    win32u!NtGdiPolyPatBlt
+    gdi32full!PolyPatBlt+0x156
+    user32!FillRect+0x59
+    xul!gfxWindowsNativeDrawing::BeginNativeDrawing+0xa90
+    xul!nsNativeThemeWin::DrawWidgetBackground+0x635
+    xul!nsDisplayThemedBackground::PaintInternal+0x1e7
+    xul!nsDisplayThemedBackground::Paint+0x56
+    xul!mozilla::FrameLayerBuilder::PaintItems+0xc96
+    xul!mozilla::FrameLayerBuilder::DrawPaintedLayer+0x86b
+
+
+24 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!RealGetSystemMetrics+0x121
+    UxTheme!ThemeGetSystemMetrics+0x24
+    user32!GetSystemMetrics+0x80
+    xul!nsNativeThemeWin::ClassicGetMinimumWidgetSize+0x15e
+    xul!nsNativeThemeWin::GetMinimumWidgetSize+0x2ca
+    xul!nsIFrame::AddXULMinSize+0x1e9
+    xul!nsBoxFrame::GetXULMinSize+0x169
+    xul!nsBoxFrame::GetXULPrefSize+0x29c
+    xul!nsSprocketLayout::GetXULPrefSize+0x14f
+
+
+23 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!RealGetSystemMetrics+0x121
+    UxTheme!ThemeGetSystemMetrics+0x24
+    user32!GetSystemMetrics+0x80
+    xul!nsNativeThemeWin::ClassicGetMinimumWidgetSize+0x14c
+    xul!nsNativeThemeWin::GetMinimumWidgetSize+0x2ca
+    xul!nsIFrame::AddXULMinSize+0x1e9
+    xul!nsBoxFrame::GetXULMinSize+0x169
+    xul!nsBoxFrame::GetXULPrefSize+0x29c
+    xul!nsSprocketLayout::GetXULPrefSize+0x14f
+
+
+19 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!GetDpiForSystem+0x44
+    UxTheme!_InternalSystemParametersInfo+0x18
+    UxTheme!ThemeSystemParametersInfoA+0xb2
+    user32!SystemParametersInfoA+0x9b
+    xul!_moz_cairo_win32_get_system_text_quality+0x95
+    xul!_cairo_dwrite_font_face_scaled_font_create+0x24e
+    xul!_moz_cairo_scaled_font_create+0x71c
+    xul!gfxDWriteFont::InitCairoScaledFont+0xc8
+    xul!gfxDWriteFont::SetupCairoFont+0x18
+    xul!gfxFont::GetRoundOffsetsToPixels+0xab
+
+
+19 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoA+0xf4
+    UxTheme!ClassicSystemParametersInfoA+0x41
+    UxTheme!_InternalSystemParametersInfo+0x10
+    UxTheme!ThemeSystemParametersInfoA+0xaa
+    user32!SystemParametersInfoA+0x9b
+    xul!_moz_cairo_win32_get_system_text_quality+0x95
+    xul!_cairo_dwrite_font_face_scaled_font_create+0x24e
+    xul!_moz_cairo_scaled_font_create+0x71c
+    xul!gfxDWriteFont::InitCairoScaledFont+0xc8
+    xul!gfxDWriteFont::SetupCairoFont+0x18
+    xul!gfxFont::GetRoundOffsetsToPixels+0xab
+
+
+19 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!GetDpiForSystem+0x44
+    UxTheme!_InternalSystemParametersInfo+0x18
+    UxTheme!ThemeSystemParametersInfoA+0xb2
+    user32!SystemParametersInfoA+0x9b
+    xul!_moz_cairo_win32_get_system_text_quality+0x36
+    xul!_cairo_dwrite_font_face_scaled_font_create+0x24e
+    xul!_moz_cairo_scaled_font_create+0x71c
+    xul!gfxDWriteFont::InitCairoScaledFont+0xc8
+    xul!gfxDWriteFont::SetupCairoFont+0x18
+    xul!gfxFont::GetRoundOffsetsToPixels+0xab
+
+
+18 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!RealGetSystemMetrics+0x121
+    UxTheme!ThemeGetSystemMetrics+0x24
+    user32!GetSystemMetrics+0x80
+    xul!nsNativeThemeWin::ClassicGetMinimumWidgetSize+0x444
+    xul!nsNativeThemeWin::GetMinimumWidgetSize+0x2ca
+    xul!nsIFrame::AddXULMinSize+0x1e9
+    xul!nsBoxFrame::GetXULMinSize+0x169
+    xul!GetScrollbarMetrics+0x9d
+    xul!nsHTMLScrollFrame::TryLayout+0x492
+
+
+18 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoA+0xf4
+    UxTheme!ClassicSystemParametersInfoA+0x41
+    UxTheme!_InternalSystemParametersInfo+0x10
+    UxTheme!ThemeSystemParametersInfoA+0xaa
+    user32!SystemParametersInfoA+0x9b
+    xul!_moz_cairo_win32_get_system_text_quality+0x36
+    xul!_cairo_dwrite_font_face_scaled_font_create+0x24e
+    xul!_moz_cairo_scaled_font_create+0x71c
+    xul!gfxDWriteFont::InitCairoScaledFont+0xc8
+    xul!gfxDWriteFont::SetupCairoFont+0x18
+    xul!gfxFont::GetRoundOffsetsToPixels+0xab
+
+
+16 - win32u!NtUserGetObjectInformation
+    win32u!NtUserGetObjectInformation
+    rdpendp!IsAudioCaptureEnabledByLicense+0x731
+    rdpendp!IsAudioCaptureRedirectionEnabled+0x11d
+    rdpendp!GetTSAudioEndpointEnumeratorForSession+0x188
+    MMDevApi!CTSEnumeratorWrapper::Initialize+0x48
+    MMDevApi!CTSEnumeratorWrapper::CreateInstance+0x95
+    MMDevApi!GetTsRemoteAudioEnumerator+0x6d
+    MMDevApi!CreateEndpointEnumerator+0x158ff
+    MMDevApi!CDeviceEnumerator::FinalConstruct+0x105
+    MMDevApi!ATL::CComObjectCached<CDeviceEnumerator>::CreateInstance+0xa5
+    MMDevApi!ATL::CComClassFactorySingleton<CDeviceEnumerator>::CreateInstance+0x93
+    combase!CServerContextActivator::CreateInstance+0x1e1
+    combase!ActivationPropertiesIn::DelegateCreateInstance+0xbe
+    combase!CApartmentActivator::CreateInstance+0x9c
+    combase!CProcessActivator::CCICallback+0x58
+    combase!CProcessActivator::AttemptActivation+0x40
+    combase!CProcessActivator::ActivateByContext+0x91
+    combase!CProcessActivator::CreateInstance+0x80
+    combase!ActivationPropertiesIn::DelegateCreateInstance+0xbe
+    combase!CClientContextActivator::CreateInstance+0x11d
+    combase!ActivationPropertiesIn::DelegateCreateInstance+0xbe
+    combase!ICoCreateInstanceEx+0x93d
+    combase!CComActivator::DoCreateInstance+0x169
+    combase!CoCreateInstanceEx+0x88
+    combase!CoCreateInstance+0xc3
+    xul!mozilla::widget::AudioSession::Start+0x6b1
+    xul!mozilla::widget::StartAudioSession+0x11
+    xul!mozilla::dom::ContentChild::RecvSetAudioSessionData+0x8d
+    xul!mozilla::dom::PContentChild::OnMessageReceived+0x11bda
+    xul!mozilla::dom::ContentChild::OnMessageReceived+0xf0
+    xul!mozilla::ipc::MessageChannel::DispatchAsyncMessage+0x1a0
+
+
+16 - win32u!NtUserGetObjectInformation
+    win32u!NtUserGetObjectInformation
+    rdpendp!IsAudioCaptureEnabledByLicense+0x830
+    rdpendp!IsAudioCaptureRedirectionEnabled+0x11d
+    rdpendp!GetTSAudioEndpointEnumeratorForSession+0x188
+    MMDevApi!CTSEnumeratorWrapper::Initialize+0x48
+    MMDevApi!CTSEnumeratorWrapper::CreateInstance+0x95
+    MMDevApi!GetTsRemoteAudioEnumerator+0x6d
+    MMDevApi!CreateEndpointEnumerator+0x158ff
+    MMDevApi!CDeviceEnumerator::FinalConstruct+0x105
+    MMDevApi!ATL::CComObjectCached<CDeviceEnumerator>::CreateInstance+0xa5
+    MMDevApi!ATL::CComClassFactorySingleton<CDeviceEnumerator>::CreateInstance+0x93
+    combase!CServerContextActivator::CreateInstance+0x1e1
+    combase!ActivationPropertiesIn::DelegateCreateInstance+0xbe
+    combase!CApartmentActivator::CreateInstance+0x9c
+    combase!CProcessActivator::CCICallback+0x58
+    combase!CProcessActivator::AttemptActivation+0x40
+    combase!CProcessActivator::ActivateByContext+0x91
+    combase!CProcessActivator::CreateInstance+0x80
+    combase!ActivationPropertiesIn::DelegateCreateInstance+0xbe
+    combase!CClientContextActivator::CreateInstance+0x11d
+    combase!ActivationPropertiesIn::DelegateCreateInstance+0xbe
+    combase!ICoCreateInstanceEx+0x93d
+    combase!CComActivator::DoCreateInstance+0x169
+    combase!CoCreateInstanceEx+0x88
+    combase!CoCreateInstance+0xc3
+    xul!mozilla::widget::AudioSession::Start+0x6b1
+    xul!mozilla::widget::StartAudioSession+0x11
+    xul!mozilla::dom::ContentChild::RecvSetAudioSessionData+0x8d
+    xul!mozilla::dom::PContentChild::OnMessageReceived+0x11bda
+    xul!mozilla::dom::ContentChild::OnMessageReceived+0xf0
+    xul!mozilla::ipc::MessageChannel::DispatchAsyncMessage+0x1a0
+
+
+12 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!RealGetSystemMetrics+0x121
+    UxTheme!ThemeGetSystemMetrics+0x24
+    user32!GetSystemMetrics+0x80
+    xul!nsNativeThemeWin::ClassicGetMinimumWidgetSize+0x15e
+    xul!nsNativeThemeWin::GetMinimumWidgetSize+0x2ca
+    xul!nsIFrame::AddXULMinSize+0x1e9
+    xul!nsBoxFrame::GetXULMinSize+0x169
+    xul!nsSprocketLayout::GetXULMinSize+0x161
+    xul!nsBoxFrame::GetXULMinSize+0x1d9
+
+
+11 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!RealGetSystemMetrics+0x121
+    UxTheme!ThemeGetSystemMetrics+0x24
+    user32!GetSystemMetrics+0x80
+    xul!nsNativeThemeWin::ClassicGetMinimumWidgetSize+0x14c
+    xul!nsNativeThemeWin::GetMinimumWidgetSize+0x2ca
+    xul!nsIFrame::AddXULMinSize+0x1e9
+    xul!nsBoxFrame::GetXULMinSize+0x169
+    xul!nsSprocketLayout::GetXULMinSize+0x161
+    xul!nsBoxFrame::GetXULMinSize+0x1d9
+
+
+10 - win32u!NtGdiGetDeviceCaps
+    win32u!NtGdiGetDeviceCaps
+    GDI32!GetDeviceCaps+0x12d
+    UxTheme!IsScreenDC+0xe
+    UxTheme!CRenderObj::GetEffectiveDpi+0x13
+    UxTheme!CImageFile::SelectCorrectImageFile+0x212
+    UxTheme!CImageFile::DrawBackground+0x39
+    UxTheme!DrawThemeBackground+0x2d3
+    xul!nsNativeThemeWin::DrawWidgetBackground+0x1ca4
+    xul!nsDisplayThemedBackground::PaintInternal+0x1e7
+    xul!nsDisplayThemedBackground::Paint+0x56
+    xul!mozilla::FrameLayerBuilder::PaintItems+0xc96
+    xul!mozilla::FrameLayerBuilder::DrawPaintedLayer+0x86b
+    xul!mozilla::layers::ClientSingleTiledLayerBuffer::PaintThebes+0xe70
+
+
+10 - win32u!NtGdiGetDeviceCaps
+    win32u!NtGdiGetDeviceCaps
+    GDI32!GetDeviceCaps+0x12d
+    UxTheme!IsScreenDC+0xe
+    UxTheme!CRenderObj::GetEffectiveDpi+0x13
+    UxTheme!CImageFile::SelectCorrectImageFile+0x212
+    UxTheme!CImageFile::GetPartSize+0x38
+    UxTheme!GetThemePartSize+0x101
+    xul!nsNativeThemeWin::DrawWidgetBackground+0x1bac
+    xul!nsDisplayThemedBackground::PaintInternal+0x1e7
+    xul!nsDisplayThemedBackground::Paint+0x56
+    xul!mozilla::FrameLayerBuilder::PaintItems+0xc96
+    xul!mozilla::FrameLayerBuilder::DrawPaintedLayer+0x86b
+    xul!mozilla::layers::ClientSingleTiledLayerBuffer::PaintThebes+0xe70
+
+
+10 - win32u!NtGdiDrawStream
+    win32u!NtGdiDrawStream
+    gdi32full!GdiDrawStream+0x5d
+    UxTheme!CImageFile::DrawBackgroundDS+0x2a8
+    UxTheme!CImageFile::DrawImageInfo+0x243
+    UxTheme!CImageFile::DrawBackground+0x66
+    UxTheme!DrawThemeBackground+0x300
+    xul!nsNativeThemeWin::DrawWidgetBackground+0x1ca4
+    xul!nsDisplayThemedBackground::PaintInternal+0x1e7
+    xul!nsDisplayThemedBackground::Paint+0x56
+    xul!mozilla::FrameLayerBuilder::PaintItems+0xc96
+    xul!mozilla::FrameLayerBuilder::DrawPaintedLayer+0x86b
+    xul!mozilla::layers::ClientSingleTiledLayerBuffer::PaintThebes+0xe70
+
+
+9 - win32u!NtUserGetProcessWindowStation
+    win32u!NtUserGetProcessWindowStation
+    rdpendp!IsAudioCaptureEnabledByLicense+0x6d8
+    rdpendp!IsAudioCaptureRedirectionEnabled+0x11d
+    rdpendp!GetTSAudioEndpointEnumeratorForSession+0x188
+    MMDevApi!CTSEnumeratorWrapper::Initialize+0x48
+    MMDevApi!CTSEnumeratorWrapper::CreateInstance+0x95
+    MMDevApi!GetTsRemoteAudioEnumerator+0x6d
+    MMDevApi!CreateEndpointEnumerator+0x158ff
+    MMDevApi!CDeviceEnumerator::FinalConstruct+0x105
+    MMDevApi!ATL::CComObjectCached<CDeviceEnumerator>::CreateInstance+0xa5
+    MMDevApi!ATL::CComClassFactorySingleton<CDeviceEnumerator>::CreateInstance+0x93
+    combase!CServerContextActivator::CreateInstance+0x1e1
+    combase!ActivationPropertiesIn::DelegateCreateInstance+0xbe
+    combase!CApartmentActivator::CreateInstance+0x9c
+    combase!CProcessActivator::CCICallback+0x58
+    combase!CProcessActivator::AttemptActivation+0x40
+    combase!CProcessActivator::ActivateByContext+0x91
+    combase!CProcessActivator::CreateInstance+0x80
+    combase!ActivationPropertiesIn::DelegateCreateInstance+0xbe
+    combase!CClientContextActivator::CreateInstance+0x11d
+    combase!ActivationPropertiesIn::DelegateCreateInstance+0xbe
+    combase!ICoCreateInstanceEx+0x93d
+    combase!CComActivator::DoCreateInstance+0x169
+    combase!CoCreateInstanceEx+0x88
+    combase!CoCreateInstance+0xc3
+    xul!mozilla::widget::AudioSession::Start+0x6b1
+    xul!mozilla::widget::StartAudioSession+0x11
+    xul!mozilla::dom::ContentChild::RecvSetAudioSessionData+0x8d
+    xul!mozilla::dom::PContentChild::OnMessageReceived+0x11bda
+    xul!mozilla::dom::ContentChild::OnMessageReceived+0xf0
+    xul!mozilla::ipc::MessageChannel::DispatchAsyncMessage+0x1a0
+
+
+9 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!GetDpiForSystem+0x44
+    UxTheme!_InternalSystemParametersInfo+0x18
+    UxTheme!ThemeSystemParametersInfoW+0xb2
+    user32!SystemParametersInfoW+0x93
+    dwrite!DWriteRenderingParams::DetermineCompatibleSmoothingMode+0x40
+    dwrite!DWriteRenderingParams::DWriteRenderingParams+0x2b
+    dwrite!ComObject<DWriteRenderingParams,DeleteOnZeroReference>::ComObject<DWriteRenderingParams,DeleteOnZeroReference><float
+    dwrite!DWriteFactory::CreateCustomRenderingParams+0x106
+    xul!gfxWindowsPlatform::SetupClearTypeParams+0x901
+    xul!gfxWindowsPlatform::InitDWriteSupport+0x8d
+    xul!gfxWindowsPlatform::InitAcceleration+0xa2
+    xul!gfxPlatform::Init+0x89d
+    xul!gfxPlatform::InitChild+0xcd
+    xul!mozilla::dom::ContentChild::InitGraphicsDeviceData+0x18
+
+
+9 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoW+0x84
+    UxTheme!ClassicSystemParametersInfoW+0x41
+    UxTheme!_InternalSystemParametersInfo+0x10
+    UxTheme!ThemeSystemParametersInfoW+0xaa
+    user32!SystemParametersInfoW+0x93
+    dwrite!DWriteRenderingParams::DetermineCompatibleSmoothingMode+0x40
+    dwrite!DWriteRenderingParams::DWriteRenderingParams+0x2b
+    dwrite!ComObject<DWriteRenderingParams,DeleteOnZeroReference>::ComObject<DWriteRenderingParams,DeleteOnZeroReference><float
+    dwrite!DWriteRenderingParams::CreateRenderingParamsFromDeviceName+0x258
+    dwrite!DWriteRenderingParams::Create+0x19
+    dwrite!DWriteFactory::CreateRenderingParamsInternal+0x47
+    xul!gfxWindowsPlatform::SetupClearTypeParams+0x438
+    xul!gfxWindowsPlatform::InitDWriteSupport+0x8d
+    xul!gfxWindowsPlatform::InitAcceleration+0xa2
+    xul!gfxPlatform::Init+0x89d
+    xul!gfxPlatform::InitChild+0xcd
+    xul!mozilla::dom::ContentChild::InitGraphicsDeviceData+0x18
+
+
+9 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoW+0x84
+    UxTheme!ClassicSystemParametersInfoW+0x41
+    UxTheme!_InternalSystemParametersInfo+0x10
+    UxTheme!ThemeSystemParametersInfoW+0xaa
+    user32!SystemParametersInfoW+0x93
+    dwrite!DWriteRenderingParams::DetermineCompatibleSmoothingMode+0x40
+    dwrite!DWriteRenderingParams::DWriteRenderingParams+0x2b
+    dwrite!ComObject<DWriteRenderingParams,DeleteOnZeroReference>::ComObject<DWriteRenderingParams,DeleteOnZeroReference><float
+    dwrite!DWriteFactory::CreateCustomRenderingParams+0x106
+    xul!gfxWindowsPlatform::SetupClearTypeParams+0x7f0
+    xul!gfxWindowsPlatform::InitDWriteSupport+0x8d
+    xul!gfxWindowsPlatform::InitAcceleration+0xa2
+    xul!gfxPlatform::Init+0x89d
+    xul!gfxPlatform::InitChild+0xcd
+    xul!mozilla::dom::ContentChild::InitGraphicsDeviceData+0x18
+
+
+9 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoW+0x84
+    UxTheme!ClassicSystemParametersInfoW+0x41
+    UxTheme!_InternalSystemParametersInfo+0x10
+    UxTheme!ThemeSystemParametersInfoW+0xaa
+    user32!SystemParametersInfoW+0x93
+    dwrite!DWriteRenderingParams::DetermineCompatibleSmoothingMode+0x20
+    dwrite!DWriteRenderingParams::DWriteRenderingParams+0x2b
+    dwrite!ComObject<DWriteRenderingParams,DeleteOnZeroReference>::ComObject<DWriteRenderingParams,DeleteOnZeroReference><float
+    dwrite!DWriteRenderingParams::CreateRenderingParamsFromDeviceName+0x258
+    dwrite!DWriteRenderingParams::Create+0x19
+    dwrite!DWriteFactory::CreateRenderingParamsInternal+0x47
+    xul!gfxWindowsPlatform::SetupClearTypeParams+0x438
+    xul!gfxWindowsPlatform::InitDWriteSupport+0x8d
+    xul!gfxWindowsPlatform::InitAcceleration+0xa2
+    xul!gfxPlatform::Init+0x89d
+    xul!gfxPlatform::InitChild+0xcd
+    xul!mozilla::dom::ContentChild::InitGraphicsDeviceData+0x18
+
+
+8 - win32u!NtUserGetThreadDesktop
+    win32u!NtUserGetThreadDesktop
+    rdpendp!IsAudioCaptureEnabledByLicense+0x7f0
+    rdpendp!IsAudioCaptureRedirectionEnabled+0x11d
+    rdpendp!GetTSAudioEndpointEnumeratorForSession+0x188
+    MMDevApi!CTSEnumeratorWrapper::Initialize+0x48
+    MMDevApi!CTSEnumeratorWrapper::CreateInstance+0x95
+    MMDevApi!GetTsRemoteAudioEnumerator+0x6d
+    MMDevApi!CreateEndpointEnumerator+0x158ff
+    MMDevApi!CDeviceEnumerator::FinalConstruct+0x105
+    MMDevApi!ATL::CComObjectCached<CDeviceEnumerator>::CreateInstance+0xa5
+    MMDevApi!ATL::CComClassFactorySingleton<CDeviceEnumerator>::CreateInstance+0x93
+    combase!CServerContextActivator::CreateInstance+0x1e1
+    combase!ActivationPropertiesIn::DelegateCreateInstance+0xbe
+    combase!CApartmentActivator::CreateInstance+0x9c
+    combase!CProcessActivator::CCICallback+0x58
+    combase!CProcessActivator::AttemptActivation+0x40
+    combase!CProcessActivator::ActivateByContext+0x91
+    combase!CProcessActivator::CreateInstance+0x80
+    combase!ActivationPropertiesIn::DelegateCreateInstance+0xbe
+    combase!CClientContextActivator::CreateInstance+0x11d
+    combase!ActivationPropertiesIn::DelegateCreateInstance+0xbe
+    combase!ICoCreateInstanceEx+0x93d
+    combase!CComActivator::DoCreateInstance+0x169
+    combase!CoCreateInstanceEx+0x88
+    combase!CoCreateInstance+0xc3
+    xul!mozilla::widget::AudioSession::Start+0x6b1
+    xul!mozilla::widget::StartAudioSession+0x11
+    xul!mozilla::dom::ContentChild::RecvSetAudioSessionData+0x8d
+    xul!mozilla::dom::PContentChild::OnMessageReceived+0x11bda
+    xul!mozilla::dom::ContentChild::OnMessageReceived+0xf0
+    xul!mozilla::ipc::MessageChannel::DispatchAsyncMessage+0x1a0
+
+
+8 - win32u!NtUserCreateWindowEx
+    win32u!NtUserCreateWindowEx
+    user32!VerNtUserCreateWindowEx+0x20f
+    user32!CreateWindowInternal+0x1b4
+    user32!CreateWindowExW+0x82
+    combase!InitMainThreadWnd+0x56
+    combase!ThreadFirstInitialize+0x1e7
+    combase!_CoInitializeEx+0x1a1
+    combase!CoInitializeEx+0x36
+    xul!mozilla::mscom::ApartmentRegion::Init+0x87
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x186
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x24
+    xul!mozilla::dom::ContentProcess::ContentProcess+0x72
+    xul!XRE_InitChildProcess+0xa10
+    xul!mozilla::BootstrapImpl::XRE_InitChildProcess+0x2a
+
+
+8 - win32u!NtUserRegisterWindowMessage
+    win32u!NtUserRegisterWindowMessage
+    user32!RegisterWindowMessageW+0x2c
+    xul!std::vector<tagMSG,std::allocator<tagMSG>
+    xul!_GLOBAL__sub_I_Unified_cpp_widget_windows1.cpp+0x18
+    ucrtbase!initterm+0x43
+    xul!dllmain_crt_process_attach+0xae
+    xul!dllmain_dispatch+0x74
+    ntdll!LdrpCallInitRoutine+0x6f
+
+
+8 - win32u!NtGdiCreateCompatibleDC
+    win32u!NtGdiCreateCompatibleDC
+    gdi32full!CreateCompatibleDC+0x14
+    xul!_create_dc_and_bitmap+0x583
+    xul!_cairo_win32_surface_create_for_dc+0xfe
+    xul!_moz_cairo_win32_surface_create_with_dib+0x2e
+    xul!gfxWindowsSurface::gfxWindowsSurface+0xaf
+    xul!gfxWindowsPlatform::CreateOffscreenSurface+0xf8
+    xul!gfxPlatform::Init+0xac0
+
+
+8 - win32u!NtUserRegisterClassExWOW
+    win32u!NtUserRegisterClassExWOW
+    user32!RegisterClassExWOWW+0x2f5
+    user32!RegisterClassW+0x6f
+    combase!RegisterOleWndClass+0x63
+    combase!ThreadFirstInitialize+0x1f7
+    combase!_CoInitializeEx+0x1a1
+    combase!CoInitializeEx+0x36
+    xul!mozilla::mscom::ApartmentRegion::Init+0x87
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x186
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x24
+    xul!mozilla::dom::ContentProcess::ContentProcess+0x72
+    xul!XRE_InitChildProcess+0xa10
+    xul!mozilla::BootstrapImpl::XRE_InitChildProcess+0x2a
+
+
+8 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!GetDpiForSystem+0x44
+    UxTheme!_InternalSystemParametersInfo+0x18
+    UxTheme!ThemeSystemParametersInfoW+0xb2
+    user32!SystemParametersInfoW+0x93
+    dwrite!DWriteRenderingParams::DetermineCompatibleGamma+0x26
+    dwrite!DWriteRenderingParams::DWriteRenderingParams+0x32
+    dwrite!ComObject<DWriteRenderingParams,DeleteOnZeroReference>::ComObject<DWriteRenderingParams,DeleteOnZeroReference><float
+    dwrite!DWriteFactory::CreateCustomRenderingParams+0x106
+    xul!gfxWindowsPlatform::SetupClearTypeParams+0x901
+    xul!gfxWindowsPlatform::InitDWriteSupport+0x8d
+    xul!gfxWindowsPlatform::InitAcceleration+0xa2
+    xul!gfxPlatform::Init+0x89d
+    xul!gfxPlatform::InitChild+0xcd
+    xul!mozilla::dom::ContentChild::InitGraphicsDeviceData+0x18
+
+
+8 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!GetDpiForSystem+0x44
+    UxTheme!_InternalSystemParametersInfo+0x18
+    UxTheme!ThemeSystemParametersInfoW+0xb2
+    user32!SystemParametersInfoW+0x93
+    dwrite!DWriteRenderingParams::DetermineCompatibleSmoothingMode+0x40
+    dwrite!DWriteRenderingParams::DWriteRenderingParams+0x2b
+    dwrite!ComObject<DWriteRenderingParams,DeleteOnZeroReference>::ComObject<DWriteRenderingParams,DeleteOnZeroReference><float
+    dwrite!DWriteRenderingParams::CreateRenderingParamsFromDeviceName+0x258
+    dwrite!DWriteRenderingParams::Create+0x19
+    dwrite!DWriteFactory::CreateRenderingParamsInternal+0x47
+    xul!gfxWindowsPlatform::SetupClearTypeParams+0x438
+    xul!gfxWindowsPlatform::InitDWriteSupport+0x8d
+    xul!gfxWindowsPlatform::InitAcceleration+0xa2
+    xul!gfxPlatform::Init+0x89d
+    xul!gfxPlatform::InitChild+0xcd
+    xul!mozilla::dom::ContentChild::InitGraphicsDeviceData+0x18
+
+
+8 - win32u!NtUserRegisterWindowMessage
+    win32u!NtUserRegisterWindowMessage
+    user32!RegisterWindowMessageW+0x2c
+    ole32!_RegisterClipFormat+0x9e
+    ole32!InitPropset+0x9e
+    ole32!_typesDllMain+0x16e
+    ole32!OleautExtDllMain+0x1ec
+    ole32!DllMain+0x54
+    ole32!dllmain_dispatch+0x8f
+    ntdll!LdrpCallInitRoutine+0x6f
+    ntdll!LdrpInitializeNode+0x1c1
+    ntdll!LdrpInitializeGraphRecurse+0x80
+    ntdll!LdrpInitializeGraphRecurse+0xaa
+    ntdll!LdrpPrepareModuleForExecution+0xc5
+    ntdll!LdrpLoadDllInternal+0x199
+    ntdll!LdrpLoadDll+0xa8
+    ntdll!LdrLoadDll+0xe4
+    mozglue!mozilla::interceptor::FuncHook<mozilla::interceptor::WindowsDllInterceptor<mozilla::interceptor::VMSharingPolicyShared<mozilla::interceptor::MMPolicyInProcess,128>
+    mozglue!patched_LdrLoadDll+0xae6
+    KERNELBASE!LoadLibraryExW+0x161
+    firefox!GetLibHandle+0x33
+    firefox!ReadDependentCB+0x2c
+    firefox!ReadDependentCB+0x7b
+    firefox!XPCOMGlueLoad+0x354
+    firefox!mozilla::GetBootstrap+0x152
+    firefox!InitXPCOMGlue+0x7a
+    firefox!NS_internal_main+0xb3
+    firefox!wmain+0x2a7
+    firefox!__scrt_common_main_seh+0x10c
+    KERNEL32!BaseThreadInitThunk+0x14
+    ntdll!RtlUserThreadStart+0x21
+
+
+8 - win32u!NtUserMessageCall
+    win32u!NtUserMessageCall
+    user32!RealDefWindowProcWorker+0x150
+    user32!RealDefWindowProcW+0x52
+    UxTheme!_ThemeDefWindowProc+0x540
+    UxTheme!ThemeDefWindowProcW+0x11
+    user32!DefWindowProcW+0x1c4
+    combase!OleMainThreadWndProc+0x25
+    user32!UserCallWinProcCheckWow+0x266
+    user32!DispatchClientMessage+0x9c
+    user32!_fnINOUTNCCALCSIZE+0x3b
+    ntdll!KiUserCallbackDispatcherContinue
+    win32u!NtUserCreateWindowEx+0x14
+    user32!VerNtUserCreateWindowEx+0x20f
+    user32!CreateWindowInternal+0x1b4
+    user32!CreateWindowExW+0x82
+    combase!InitMainThreadWnd+0x56
+    combase!ThreadFirstInitialize+0x1e7
+    combase!_CoInitializeEx+0x1a1
+    combase!CoInitializeEx+0x36
+    xul!mozilla::mscom::ApartmentRegion::Init+0x87
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x186
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x24
+    xul!mozilla::dom::ContentProcess::ContentProcess+0x72
+    xul!XRE_InitChildProcess+0xa10
+    xul!mozilla::BootstrapImpl::XRE_InitChildProcess+0x2a
+
+
+8 - win32u!NtUserCallOneParam
+    win32u!NtUserCallOneParam
+    user32!ClientThreadSetup+0x127
+    user32!_ClientThreadSetup+0x9
+    ntdll!KiUserCallbackDispatcherContinue
+    win32u!NtGdiInit+0x14
+    gdi32full!GdiDllInitialize+0x4e
+    user32!_UserClientDllInitialize+0x41b
+    ntdll!LdrpCallInitRoutine+0x6f
+    ntdll!LdrpInitializeNode+0x1c1
+    ntdll!LdrpInitializeGraphRecurse+0x80
+    ntdll!LdrpPrepareModuleForExecution+0xc5
+    ntdll!LdrpLoadDllInternal+0x199
+    ntdll!LdrpLoadDll+0xa8
+    ntdll!LdrLoadDll+0xe4
+    mozglue!mozilla::interceptor::FuncHook<mozilla::interceptor::WindowsDllInterceptor<mozilla::interceptor::VMSharingPolicyShared<mozilla::interceptor::MMPolicyInProcess,128>
+    mozglue!patched_LdrLoadDll+0xae6
+    KERNELBASE!LoadLibraryExW+0x161
+    mozglue!DllBlocklist_Initialize+0x228
+    firefox!NS_internal_main+0x6f
+    firefox!wmain+0x2a7
+    firefox!__scrt_common_main_seh+0x10c
+    KERNEL32!BaseThreadInitThunk+0x14
+    ntdll!RtlUserThreadStart+0x21
+
+
+8 - win32u!NtUserMessageCall
+    win32u!NtUserMessageCall
+    user32!RealDefWindowProcWorker+0x150
+    user32!DefWindowProcW+0x198
+    combase!OleMainThreadWndProc+0x25
+    user32!UserCallWinProcCheckWow+0x266
+    user32!DispatchClientMessage+0x9c
+    user32!__fnINLPCREATESTRUCT+0xa2
+    ntdll!KiUserCallbackDispatcherContinue
+    win32u!NtUserCreateWindowEx+0x14
+    user32!VerNtUserCreateWindowEx+0x20f
+    user32!CreateWindowInternal+0x1b4
+    user32!CreateWindowExW+0x82
+    combase!InitMainThreadWnd+0x56
+    combase!ThreadFirstInitialize+0x1e7
+    combase!_CoInitializeEx+0x1a1
+    combase!CoInitializeEx+0x36
+    xul!mozilla::mscom::ApartmentRegion::Init+0x87
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x186
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x24
+    xul!mozilla::dom::ContentProcess::ContentProcess+0x72
+    xul!XRE_InitChildProcess+0xa10
+    xul!mozilla::BootstrapImpl::XRE_InitChildProcess+0x2a
+
+
+8 - win32u!NtUserGetThreadDesktop
+    win32u!NtUserGetThreadDesktop
+    user32!ClientThreadSetup+0x102
+    user32!_ClientThreadSetup+0x9
+    ntdll!KiUserCallbackDispatcherContinue
+    win32u!NtGdiInit+0x14
+    gdi32full!GdiDllInitialize+0x4e
+    user32!_UserClientDllInitialize+0x41b
+    ntdll!LdrpCallInitRoutine+0x6f
+    ntdll!LdrpInitializeNode+0x1c1
+    ntdll!LdrpInitializeGraphRecurse+0x80
+    ntdll!LdrpPrepareModuleForExecution+0xc5
+    ntdll!LdrpLoadDllInternal+0x199
+    ntdll!LdrpLoadDll+0xa8
+    ntdll!LdrLoadDll+0xe4
+    mozglue!mozilla::interceptor::FuncHook<mozilla::interceptor::WindowsDllInterceptor<mozilla::interceptor::VMSharingPolicyShared<mozilla::interceptor::MMPolicyInProcess,128>
+    mozglue!patched_LdrLoadDll+0xae6
+    KERNELBASE!LoadLibraryExW+0x161
+    mozglue!DllBlocklist_Initialize+0x228
+    firefox!NS_internal_main+0x6f
+    firefox!wmain+0x2a7
+    firefox!__scrt_common_main_seh+0x10c
+    KERNEL32!BaseThreadInitThunk+0x14
+    ntdll!RtlUserThreadStart+0x21
+
+
+8 - win32u!NtUserGetDisplayConfigBufferSizes
+    win32u!NtUserGetDisplayConfigBufferSizes
+    user32!GetDisplayConfigBufferSizes+0x27
+    dwrite!DWriteRenderingParams::GetMonitorInvertedFromDeviceName+0x72
+    dwrite!DWriteRenderingParams::CreateRenderingParamsFromDeviceName+0x1da
+    dwrite!DWriteRenderingParams::Create+0x19
+    dwrite!DWriteFactory::CreateRenderingParamsInternal+0x47
+    xul!gfxWindowsPlatform::SetupClearTypeParams+0x438
+    xul!gfxWindowsPlatform::InitDWriteSupport+0x8d
+    xul!gfxWindowsPlatform::InitAcceleration+0xa2
+    xul!gfxPlatform::Init+0x89d
+    xul!gfxPlatform::InitChild+0xcd
+    xul!mozilla::dom::ContentChild::InitGraphicsDeviceData+0x18
+
+
+8 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!GetDpiForSystem+0x44
+    UxTheme!_InternalSystemParametersInfo+0x18
+    UxTheme!ThemeSystemParametersInfoW+0xb2
+    user32!SystemParametersInfoW+0x93
+    dwrite!DWriteRenderingParams::DetermineCompatibleSmoothingMode+0x20
+    dwrite!DWriteRenderingParams::DWriteRenderingParams+0x2b
+    dwrite!ComObject<DWriteRenderingParams,DeleteOnZeroReference>::ComObject<DWriteRenderingParams,DeleteOnZeroReference><float
+    dwrite!DWriteRenderingParams::CreateRenderingParamsFromDeviceName+0x258
+    dwrite!DWriteRenderingParams::Create+0x19
+    dwrite!DWriteFactory::CreateRenderingParamsInternal+0x47
+    xul!gfxWindowsPlatform::SetupClearTypeParams+0x438
+    xul!gfxWindowsPlatform::InitDWriteSupport+0x8d
+    xul!gfxWindowsPlatform::InitAcceleration+0xa2
+    xul!gfxPlatform::Init+0x89d
+    xul!gfxPlatform::InitChild+0xcd
+    xul!mozilla::dom::ContentChild::InitGraphicsDeviceData+0x18
+
+
+8 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!GetDpiForSystem+0x44
+    UxTheme!_InternalSystemParametersInfo+0x18
+    UxTheme!ThemeSystemParametersInfoW+0xb2
+    user32!SystemParametersInfoW+0x93
+    dwrite!DWriteRenderingParams::DetermineCompatibleSmoothingMode+0x20
+    dwrite!DWriteRenderingParams::DWriteRenderingParams+0x2b
+    dwrite!ComObject<DWriteRenderingParams,DeleteOnZeroReference>::ComObject<DWriteRenderingParams,DeleteOnZeroReference><float
+    dwrite!DWriteFactory::CreateCustomRenderingParams+0x106
+    xul!gfxWindowsPlatform::SetupClearTypeParams+0x7f0
+    xul!gfxWindowsPlatform::InitDWriteSupport+0x8d
+    xul!gfxWindowsPlatform::InitAcceleration+0xa2
+    xul!gfxPlatform::Init+0x89d
+    xul!gfxPlatform::InitChild+0xcd
+    xul!mozilla::dom::ContentChild::InitGraphicsDeviceData+0x18
+
+
+8 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoW+0x84
+    UxTheme!ClassicSystemParametersInfoW+0x41
+    UxTheme!_InternalSystemParametersInfo+0x10
+    UxTheme!ThemeSystemParametersInfoW+0xaa
+    user32!SystemParametersInfoW+0x93
+    dwrite!DWriteRenderingParams::DetermineCompatibleSmoothingMode+0x20
+    dwrite!DWriteRenderingParams::DWriteRenderingParams+0x2b
+    dwrite!ComObject<DWriteRenderingParams,DeleteOnZeroReference>::ComObject<DWriteRenderingParams,DeleteOnZeroReference><float
+    dwrite!DWriteFactory::CreateCustomRenderingParams+0x106
+    xul!gfxWindowsPlatform::SetupClearTypeParams+0x901
+    xul!gfxWindowsPlatform::InitDWriteSupport+0x8d
+    xul!gfxWindowsPlatform::InitAcceleration+0xa2
+    xul!gfxPlatform::Init+0x89d
+    xul!gfxPlatform::InitChild+0xcd
+    xul!mozilla::dom::ContentChild::InitGraphicsDeviceData+0x18
+
+
+8 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoW+0x84
+    UxTheme!ClassicSystemParametersInfoW+0x41
+    UxTheme!_InternalSystemParametersInfo+0x10
+    UxTheme!ThemeSystemParametersInfoW+0xaa
+    user32!SystemParametersInfoW+0x93
+    dwrite!DWriteRenderingParams::DetermineCompatibleGamma+0x26
+    dwrite!DWriteRenderingParams::DWriteRenderingParams+0x32
+    dwrite!ComObject<DWriteRenderingParams,DeleteOnZeroReference>::ComObject<DWriteRenderingParams,DeleteOnZeroReference><float
+    dwrite!DWriteFactory::CreateCustomRenderingParams+0x106
+    xul!gfxWindowsPlatform::SetupClearTypeParams+0x901
+    xul!gfxWindowsPlatform::InitDWriteSupport+0x8d
+    xul!gfxWindowsPlatform::InitAcceleration+0xa2
+    xul!gfxPlatform::Init+0x89d
+    xul!gfxPlatform::InitChild+0xcd
+    xul!mozilla::dom::ContentChild::InitGraphicsDeviceData+0x18
+
+
+8 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoW+0x84
+    UxTheme!ClassicSystemParametersInfoW+0x41
+    UxTheme!_InternalSystemParametersInfo+0x10
+    UxTheme!ThemeSystemParametersInfoW+0xaa
+    user32!SystemParametersInfoW+0x93
+    dwrite!DWriteRenderingParams::DetermineCompatibleGamma+0x26
+    dwrite!DWriteRenderingParams::DWriteRenderingParams+0x32
+    dwrite!ComObject<DWriteRenderingParams,DeleteOnZeroReference>::ComObject<DWriteRenderingParams,DeleteOnZeroReference><float
+    dwrite!DWriteFactory::CreateCustomRenderingParams+0x106
+    xul!gfxWindowsPlatform::SetupClearTypeParams+0x7f0
+    xul!gfxWindowsPlatform::InitDWriteSupport+0x8d
+    xul!gfxWindowsPlatform::InitAcceleration+0xa2
+    xul!gfxPlatform::Init+0x89d
+    xul!gfxPlatform::InitChild+0xcd
+    xul!mozilla::dom::ContentChild::InitGraphicsDeviceData+0x18
+
+
+8 - win32u!NtGdiSelectBitmap
+    win32u!NtGdiSelectBitmap
+    gdi32full!SelectObjectImpl+0x1f6
+    xul!_create_dc_and_bitmap+0x669
+    xul!_cairo_win32_surface_create_for_dc+0xfe
+    xul!_moz_cairo_win32_surface_create_with_dib+0x2e
+    xul!gfxWindowsSurface::gfxWindowsSurface+0xaf
+    xul!gfxWindowsPlatform::CreateOffscreenSurface+0xf8
+    xul!gfxPlatform::Init+0xac0
+
+
+8 - win32u!NtUserGetObjectInformation
+    win32u!NtUserGetObjectInformation
+    UxTheme!_IsProcessOnInteractiveWindowStation+0x52
+    UxTheme!ApiHandlerInit+0x41
+    UxTheme!ThemeInitApiHook+0x267
+    user32!InitUserApiHook+0x46
+    user32!_ClientLoadLibrary+0x10e
+    ntdll!KiUserCallbackDispatcherContinue
+    win32u!NtUserCreateWindowEx+0x14
+    user32!VerNtUserCreateWindowEx+0x20f
+    user32!CreateWindowInternal+0x1b4
+    user32!CreateWindowExW+0x82
+    combase!InitMainThreadWnd+0x56
+    combase!ThreadFirstInitialize+0x1e7
+    combase!_CoInitializeEx+0x1a1
+    combase!CoInitializeEx+0x36
+    xul!mozilla::mscom::ApartmentRegion::Init+0x87
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x186
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x24
+    xul!mozilla::dom::ContentProcess::ContentProcess+0x72
+    xul!XRE_InitChildProcess+0xa10
+    xul!mozilla::BootstrapImpl::XRE_InitChildProcess+0x2a
+
+
+8 - win32u!NtUserFindExistingCursorIcon
+    win32u!NtUserFindExistingCursorIcon
+    user32!LoadIcoCur+0x19b
+    user32!RegisterIMEClass+0x99
+    user32!VerNtUserCreateWindowEx+0xf0
+    user32!CreateWindowInternal+0x1b4
+    user32!CreateWindowExW+0x82
+    combase!InitMainThreadWnd+0x56
+    combase!ThreadFirstInitialize+0x1e7
+    combase!_CoInitializeEx+0x1a1
+    combase!CoInitializeEx+0x36
+    xul!mozilla::mscom::ApartmentRegion::Init+0x87
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x186
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x24
+    xul!mozilla::dom::ContentProcess::ContentProcess+0x72
+    xul!XRE_InitChildProcess+0xa10
+    xul!mozilla::BootstrapImpl::XRE_InitChildProcess+0x2a
+
+
+8 - win32u!NtUserGetAtomName
+    win32u!NtUserGetAtomName
+    user32!ClassNameToVersion+0x15d
+    user32!VerNtUserCreateWindowEx+0x166
+    user32!CreateWindowInternal+0x1b4
+    user32!CreateWindowExW+0x82
+    combase!InitMainThreadWnd+0x56
+    combase!ThreadFirstInitialize+0x1e7
+    combase!_CoInitializeEx+0x1a1
+    combase!CoInitializeEx+0x36
+    xul!mozilla::mscom::ApartmentRegion::Init+0x87
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x186
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x24
+    xul!mozilla::dom::ContentProcess::ContentProcess+0x72
+    xul!XRE_InitChildProcess+0xa10
+    xul!mozilla::BootstrapImpl::XRE_InitChildProcess+0x2a
+
+
+8 - win32u!NtUserEnumDisplayDevices
+    win32u!NtUserEnumDisplayDevices
+    user32!EnumDisplayDevicesW+0x69
+    xul!mozilla::widget::GfxInfo::Init+0x13c
+    xul!mozilla::xpcom::CreateInstanceImpl+0x5730
+    xul!mozilla::xpcom::StaticModule::CreateInstance+0x57
+    xul!`anonymous
+    xul!nsComponentManagerImpl::GetServiceLocked+0x511
+    xul!nsComponentManagerImpl::GetServiceByContractID+0x153
+
+
+8 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!GetDpiForSystem+0x44
+    UxTheme!_InternalSystemParametersInfo+0x18
+    UxTheme!ThemeSystemParametersInfoW+0xb2
+    user32!SystemParametersInfoW+0x93
+    dwrite!DWriteRenderingParams::DetermineCompatibleGamma+0x26
+    dwrite!DWriteRenderingParams::DWriteRenderingParams+0x32
+    dwrite!ComObject<DWriteRenderingParams,DeleteOnZeroReference>::ComObject<DWriteRenderingParams,DeleteOnZeroReference><float
+    dwrite!DWriteFactory::CreateCustomRenderingParams+0x106
+    xul!gfxWindowsPlatform::SetupClearTypeParams+0x7f0
+    xul!gfxWindowsPlatform::InitDWriteSupport+0x8d
+    xul!gfxWindowsPlatform::InitAcceleration+0xa2
+    xul!gfxPlatform::Init+0x89d
+    xul!gfxPlatform::InitChild+0xcd
+    xul!mozilla::dom::ContentChild::InitGraphicsDeviceData+0x18
+
+
+8 - win32u!NtUserCallNoParam
+    win32u!NtUserCallNoParam
+    user32!ClientThreadSetup+0xdf
+    user32!_ClientThreadSetup+0x9
+    ntdll!KiUserCallbackDispatcherContinue
+    win32u!NtGdiInit+0x14
+    gdi32full!GdiDllInitialize+0x4e
+    user32!_UserClientDllInitialize+0x41b
+    ntdll!LdrpCallInitRoutine+0x6f
+    ntdll!LdrpInitializeNode+0x1c1
+    ntdll!LdrpInitializeGraphRecurse+0x80
+    ntdll!LdrpPrepareModuleForExecution+0xc5
+    ntdll!LdrpLoadDllInternal+0x199
+    ntdll!LdrpLoadDll+0xa8
+    ntdll!LdrLoadDll+0xe4
+    mozglue!mozilla::interceptor::FuncHook<mozilla::interceptor::WindowsDllInterceptor<mozilla::interceptor::VMSharingPolicyShared<mozilla::interceptor::MMPolicyInProcess,128>
+    mozglue!patched_LdrLoadDll+0xae6
+    KERNELBASE!LoadLibraryExW+0x161
+    mozglue!DllBlocklist_Initialize+0x228
+    firefox!NS_internal_main+0x6f
+    firefox!wmain+0x2a7
+    firefox!__scrt_common_main_seh+0x10c
+    KERNEL32!BaseThreadInitThunk+0x14
+    ntdll!RtlUserThreadStart+0x21
+
+
+8 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!GetDpiForSystem+0x44
+    UxTheme!_InternalSystemParametersInfo+0x18
+    UxTheme!ThemeSystemParametersInfoW+0xb2
+    user32!SystemParametersInfoW+0x93
+    dwrite!DWriteRenderingParams::DetermineCompatibleGamma+0x26
+    dwrite!DWriteRenderingParams::DWriteRenderingParams+0x32
+    dwrite!ComObject<DWriteRenderingParams,DeleteOnZeroReference>::ComObject<DWriteRenderingParams,DeleteOnZeroReference><float
+    dwrite!DWriteRenderingParams::CreateRenderingParamsFromDeviceName+0x258
+    dwrite!DWriteRenderingParams::Create+0x19
+    dwrite!DWriteFactory::CreateRenderingParamsInternal+0x47
+    xul!gfxWindowsPlatform::SetupClearTypeParams+0x438
+    xul!gfxWindowsPlatform::InitDWriteSupport+0x8d
+    xul!gfxWindowsPlatform::InitAcceleration+0xa2
+    xul!gfxPlatform::Init+0x89d
+    xul!gfxPlatform::InitChild+0xcd
+    xul!mozilla::dom::ContentChild::InitGraphicsDeviceData+0x18
+
+
+8 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!GetDpiForSystem+0x44
+    UxTheme!_InternalSystemParametersInfo+0x18
+    UxTheme!ThemeSystemParametersInfoW+0xb2
+    user32!SystemParametersInfoW+0x93
+    dwrite!DWriteRenderingParams::CreateRenderingParamsFromDeviceName+0x1bd
+    dwrite!DWriteRenderingParams::Create+0x19
+    dwrite!DWriteFactory::CreateRenderingParamsInternal+0x47
+    xul!gfxWindowsPlatform::SetupClearTypeParams+0x438
+    xul!gfxWindowsPlatform::InitDWriteSupport+0x8d
+    xul!gfxWindowsPlatform::InitAcceleration+0xa2
+    xul!gfxPlatform::Init+0x89d
+    xul!gfxPlatform::InitChild+0xcd
+    xul!mozilla::dom::ContentChild::InitGraphicsDeviceData+0x18
+
+
+8 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoW+0x84
+    user32!SystemParametersInfoW+0x93
+    xul!SystemParametersInfo+0x2e
+    xul!nsUXThemeData::Invalidate+0xaa
+    xul!nsUXThemeData::Initialize+0x2e
+    xul!nsToolkit::Startup+0x1f
+    xul!DllMain+0x4e
+    xul!dllmain_dispatch+0x8f
+
+
+8 - win32u!NtUserGetObjectInformation
+    win32u!NtUserGetObjectInformation
+    combase!CRpcResolver::GetThreadWinstaDesktop+0xe5
+    combase!<lambda_42f1a29483ec03d26359468a17427162>::operator()+0x85
+    combase!CRpcResolver::GetConnection+0x8c
+    combase!CoInitializeSecurity+0xb0
+    xul!mozilla::mscom::ProcessRuntime::InitializeSecurity+0xcfd
+    xul!mozilla::mscom::ProcessRuntime::InitInsideApartment+0x70
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x229
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x24
+    xul!mozilla::dom::ContentProcess::ContentProcess+0x72
+    xul!XRE_InitChildProcess+0xa10
+
+
+8 - win32u!NtUserGetGUIThreadInfo
+    win32u!NtUserGetGUIThreadInfo
+    UxTheme!_IsWin16App+0x36
+    UxTheme!ApiHandlerInit+0x4a
+    UxTheme!ThemeInitApiHook+0x267
+    user32!InitUserApiHook+0x46
+    user32!_ClientLoadLibrary+0x10e
+    ntdll!KiUserCallbackDispatcherContinue
+    win32u!NtUserCreateWindowEx+0x14
+    user32!VerNtUserCreateWindowEx+0x20f
+    user32!CreateWindowInternal+0x1b4
+    user32!CreateWindowExW+0x82
+    combase!InitMainThreadWnd+0x56
+    combase!ThreadFirstInitialize+0x1e7
+    combase!_CoInitializeEx+0x1a1
+    combase!CoInitializeEx+0x36
+    xul!mozilla::mscom::ApartmentRegion::Init+0x87
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x186
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x24
+    xul!mozilla::dom::ContentProcess::ContentProcess+0x72
+    xul!XRE_InitChildProcess+0xa10
+    xul!mozilla::BootstrapImpl::XRE_InitChildProcess+0x2a
+
+
+8 - win32u!NtUserRegisterClassExWOW
+    win32u!NtUserRegisterClassExWOW
+    user32!RegisterClassExWOWW+0x2f5
+    user32!RegisterIMEClass+0xb5
+    user32!VerNtUserCreateWindowEx+0xf0
+    user32!CreateWindowInternal+0x1b4
+    user32!CreateWindowExW+0x82
+    combase!InitMainThreadWnd+0x56
+    combase!ThreadFirstInitialize+0x1e7
+    combase!_CoInitializeEx+0x1a1
+    combase!CoInitializeEx+0x36
+    xul!mozilla::mscom::ApartmentRegion::Init+0x87
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x186
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x24
+    xul!mozilla::dom::ContentProcess::ContentProcess+0x72
+    xul!XRE_InitChildProcess+0xa10
+    xul!mozilla::BootstrapImpl::XRE_InitChildProcess+0x2a
+
+
+8 - win32u!NtGdiInit
+    win32u!NtGdiInit
+    gdi32full!GdiDllInitialize+0x4e
+    user32!_UserClientDllInitialize+0x41b
+    ntdll!LdrpCallInitRoutine+0x6f
+    ntdll!LdrpInitializeNode+0x1c1
+    ntdll!LdrpInitializeGraphRecurse+0x80
+    ntdll!LdrpPrepareModuleForExecution+0xc5
+    ntdll!LdrpLoadDllInternal+0x199
+    ntdll!LdrpLoadDll+0xa8
+    ntdll!LdrLoadDll+0xe4
+    mozglue!mozilla::interceptor::FuncHook<mozilla::interceptor::WindowsDllInterceptor<mozilla::interceptor::VMSharingPolicyShared<mozilla::interceptor::MMPolicyInProcess,128>
+    mozglue!patched_LdrLoadDll+0xae6
+    KERNELBASE!LoadLibraryExW+0x161
+    to
+    mozglue!DllBlocklist_Initialize+0x228
+    firefox!NS_internal_main+0x6f
+    firefox!wmain+0x2a7
+    firefox!__scrt_common_main_seh+0x10c
+    KERNEL32!BaseThreadInitThunk+0x14
+    ntdll!RtlUserThreadStart+0x21
+
+
+8 - win32u!NtUserEnumDisplayDevices
+    win32u!NtUserEnumDisplayDevices
+    user32!EnumDisplayDevicesW+0x69
+    dwrite!DWriteRenderingParams::CreateRenderingParamsFromDeviceName+0xf1
+    dwrite!DWriteRenderingParams::Create+0x19
+    dwrite!DWriteFactory::CreateRenderingParamsInternal+0x47
+    xul!gfxWindowsPlatform::SetupClearTypeParams+0x438
+    xul!gfxWindowsPlatform::InitDWriteSupport+0x8d
+    xul!gfxWindowsPlatform::InitAcceleration+0xa2
+    xul!gfxPlatform::Init+0x89d
+    xul!gfxPlatform::InitChild+0xcd
+    xul!mozilla::dom::ContentChild::InitGraphicsDeviceData+0x18
+
+
+8 - win32u!NtUserRegisterWindowMessage
+    win32u!NtUserRegisterWindowMessage
+    to
+    user32!RegisterWindowMessageW+0x2c
+    xul!webrtc::DesktopRect::DesktopRect+0x41
+    xul!_GLOBAL__sub_I_Unified_cpp_systemservices0.cpp+0x2c
+    ucrtbase!initterm+0x43
+    xul!dllmain_crt_process_attach+0xae
+    xul!dllmain_dispatch+0x74
+    ntdll!LdrpCallInitRoutine+0x6f
+
+
+8 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoW+0x84
+    UxTheme!ClassicSystemParametersInfoW+0x41
+    UxTheme!_InternalSystemParametersInfo+0x10
+    UxTheme!ThemeSystemParametersInfoW+0xaa
+    user32!SystemParametersInfoW+0x93
+    dwrite!DWriteRenderingParams::DetermineCompatibleGamma+0x26
+    dwrite!DWriteRenderingParams::DWriteRenderingParams+0x32
+    dwrite!ComObject<DWriteRenderingParams,DeleteOnZeroReference>::ComObject<DWriteRenderingParams,DeleteOnZeroReference><float
+    dwrite!DWriteRenderingParams::CreateRenderingParamsFromDeviceName+0x258
+    dwrite!DWriteRenderingParams::Create+0x19
+    dwrite!DWriteFactory::CreateRenderingParamsInternal+0x47
+    xul!gfxWindowsPlatform::SetupClearTypeParams+0x438
+    xul!gfxWindowsPlatform::InitDWriteSupport+0x8d
+    xul!gfxWindowsPlatform::InitAcceleration+0xa2
+    xul!gfxPlatform::Init+0x89d
+    xul!gfxPlatform::InitChild+0xcd
+    xul!mozilla::dom::ContentChild::InitGraphicsDeviceData+0x18
+
+
+8 - win32u!NtUserRegisterWindowMessage
+    win32u!NtUserRegisterWindowMessage
+    user32!RegisterWindowMessageW+0x2c
+    xul!nsAppShell::Init+0x5a
+    xul!nsAppShellInit+0xb0
+    xul!nsWidgetWindowsModuleCtor+0x9
+    xul!mozilla::xpcom::CallInitFunc+0xb2
+    xul!mozilla::xpcom::CreateInstanceImpl+0x10910
+    xul!mozilla::xpcom::StaticModule::CreateInstance+0x57
+
+
+8 - win32u!NtUserGetProcessWindowStation
+    win32u!NtUserGetProcessWindowStation
+    UxTheme!_IsProcessOnInteractiveWindowStation+0x1f
+    UxTheme!ApiHandlerInit+0x41
+    UxTheme!ThemeInitApiHook+0x267
+    user32!InitUserApiHook+0x46
+    user32!_ClientLoadLibrary+0x10e
+    ntdll!KiUserCallbackDispatcherContinue
+    win32u!NtUserCreateWindowEx+0x14
+    user32!VerNtUserCreateWindowEx+0x20f
+    user32!CreateWindowInternal+0x1b4
+    user32!CreateWindowExW+0x82
+    combase!InitMainThreadWnd+0x56
+    combase!ThreadFirstInitialize+0x1e7
+    combase!_CoInitializeEx+0x1a1
+    combase!CoInitializeEx+0x36
+    xul!mozilla::mscom::ApartmentRegion::Init+0x87
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x186
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x24
+    xul!mozilla::dom::ContentProcess::ContentProcess+0x72
+    xul!XRE_InitChildProcess+0xa10
+    xul!mozilla::BootstrapImpl::XRE_InitChildProcess+0x2a
+
+
+8 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoW+0x84
+    user32!SystemParametersInfoW+0x93
+    dwmapi!DwmIsCompositionEnabled+0x4e
+    xul!nsUXThemeData::CheckForCompositor+0x23
+    xul!nsUXThemeData::Initialize+0x25
+    xul!nsToolkit::Startup+0x1f
+    xul!DllMain+0x4e
+    xul!dllmain_dispatch+0x8f
+    ntdll!LdrpCallInitRoutine+0x6f
+
+
+8 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoW+0x84
+    UxTheme!ClassicSystemParametersInfoW+0x41
+    UxTheme!_InternalSystemParametersInfo+0x10
+    UxTheme!ThemeSystemParametersInfoW+0xaa
+    user32!SystemParametersInfoW+0x93
+    dwrite!DWriteRenderingParams::DetermineCompatibleSmoothingMode+0x20
+    dwrite!DWriteRenderingParams::DWriteRenderingParams+0x2b
+    dwrite!ComObject<DWriteRenderingParams,DeleteOnZeroReference>::ComObject<DWriteRenderingParams,DeleteOnZeroReference><float
+    dwrite!DWriteFactory::CreateCustomRenderingParams+0x106
+    xul!gfxWindowsPlatform::SetupClearTypeParams+0x7f0
+    xul!gfxWindowsPlatform::InitDWriteSupport+0x8d
+    xul!gfxWindowsPlatform::InitAcceleration+0xa2
+    xul!gfxPlatform::Init+0x89d
+    xul!gfxPlatform::InitChild+0xcd
+    xul!mozilla::dom::ContentChild::InitGraphicsDeviceData+0x18
+
+
+8 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoW+0x84
+    UxTheme!ClassicSystemParametersInfoW+0x41
+    UxTheme!_InternalSystemParametersInfo+0x10
+    UxTheme!ThemeSystemParametersInfoW+0xaa
+    user32!SystemParametersInfoW+0x93
+    dwrite!DWriteRenderingParams::DetermineCompatibleSmoothingMode+0x40
+    dwrite!DWriteRenderingParams::DWriteRenderingParams+0x2b
+    dwrite!ComObject<DWriteRenderingParams,DeleteOnZeroReference>::ComObject<DWriteRenderingParams,DeleteOnZeroReference><float
+    dwrite!DWriteFactory::CreateCustomRenderingParams+0x106
+    xul!gfxWindowsPlatform::SetupClearTypeParams+0x901
+    xul!gfxWindowsPlatform::InitDWriteSupport+0x8d
+    xul!gfxWindowsPlatform::InitAcceleration+0xa2
+    xul!gfxPlatform::Init+0x89d
+    xul!gfxPlatform::InitChild+0xcd
+    xul!mozilla::dom::ContentChild::InitGraphicsDeviceData+0x18
+
+
+8 - win32u!NtUserGetThreadDesktop
+    win32u!NtUserGetThreadDesktop
+    combase!CRpcResolver::GetThreadWinstaDesktop+0x84
+    combase!<lambda_42f1a29483ec03d26359468a17427162>::operator()+0x85
+    combase!CRpcResolver::GetConnection+0x8c
+    combase!CoInitializeSecurity+0xb0
+    xul!mozilla::mscom::ProcessRuntime::InitializeSecurity+0xcfd
+    xul!mozilla::mscom::ProcessRuntime::InitInsideApartment+0x70
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x229
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x24
+    xul!mozilla::dom::ContentProcess::ContentProcess+0x72
+    xul!XRE_InitChildProcess+0xa10
+
+
+8 - win32u!NtUserSetProcessDpiAwarenessContext
+    win32u!NtUserSetProcessDpiAwarenessContext
+    user32!SetProcessDpiAwarenessContext+0x3a
+    user32!InitProcessDpiAwareness+0x10d
+    user32!_UserClientDllInitialize+0x426
+    ntdll!LdrpCallInitRoutine+0x6f
+    ntdll!LdrpInitializeNode+0x1c1
+    ntdll!LdrpInitializeGraphRecurse+0x80
+    ntdll!LdrpPrepareModuleForExecution+0xc5
+    ntdll!LdrpLoadDllInternal+0x199
+    ntdll!LdrpLoadDll+0xa8
+    ntdll!LdrLoadDll+0xe4
+    mozglue!mozilla::interceptor::FuncHook<mozilla::interceptor::WindowsDllInterceptor<mozilla::interceptor::VMSharingPolicyShared<mozilla::interceptor::MMPolicyInProcess,128>
+    mozglue!patched_LdrLoadDll+0xae6
+    KERNELBASE!LoadLibraryExW+0x161
+    mozglue!DllBlocklist_Initialize+0x228
+    firefox!NS_internal_main+0x6f
+    firefox!wmain+0x2a7
+    firefox!__scrt_common_main_seh+0x10c
+    KERNEL32!BaseThreadInitThunk+0x14
+    ntdll!RtlUserThreadStart+0x21
+
+
+8 - win32u!NtGdiCreateDIBSection
+    win32u!NtGdiCreateDIBSection
+    gdi32full!CreateDIBSectionInternal+0x18c
+    gdi32full!CreateDIBSection+0x25
+    GDI32!CreateDIBSectionStub+0x55
+    xul!_create_dc_and_bitmap+0x5f2
+    xul!_cairo_win32_surface_create_for_dc+0xfe
+    xul!_moz_cairo_win32_surface_create_with_dib+0x2e
+    xul!gfxWindowsSurface::gfxWindowsSurface+0xaf
+    xul!gfxWindowsPlatform::CreateOffscreenSurface+0xf8
+    xul!gfxPlatform::Init+0xac0
+
+
+8 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!GetDpiForSystem+0x44
+    user32!LoadIcoCur+0xd0
+    user32!RegisterIMEClass+0x99
+    user32!VerNtUserCreateWindowEx+0xf0
+    user32!CreateWindowInternal+0x1b4
+    user32!CreateWindowExW+0x82
+    combase!InitMainThreadWnd+0x56
+    combase!ThreadFirstInitialize+0x1e7
+    combase!_CoInitializeEx+0x1a1
+    combase!CoInitializeEx+0x36
+    xul!mozilla::mscom::ApartmentRegion::Init+0x87
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x186
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x24
+    xul!mozilla::dom::ContentProcess::ContentProcess+0x72
+    xul!XRE_InitChildProcess+0xa10
+    xul!mozilla::BootstrapImpl::XRE_InitChildProcess+0x2a
+
+
+8 - win32u!NtUserGetObjectInformation
+    win32u!NtUserGetObjectInformation
+    combase!CRpcResolver::GetThreadWinstaDesktop+0xbc
+    combase!<lambda_42f1a29483ec03d26359468a17427162>::operator()+0x85
+    combase!CRpcResolver::GetConnection+0x8c
+    combase!CoInitializeSecurity+0xb0
+    xul!mozilla::mscom::ProcessRuntime::InitializeSecurity+0xcfd
+    xul!mozilla::mscom::ProcessRuntime::InitInsideApartment+0x70
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x229
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x24
+    xul!mozilla::dom::ContentProcess::ContentProcess+0x72
+    xul!XRE_InitChildProcess+0xa10
+
+
+8 - win32u!NtUserGetObjectInformation
+    win32u!NtUserGetObjectInformation
+    combase!CRpcResolver::GetThreadWinstaDesktop+0xc7b87
+    combase!<lambda_42f1a29483ec03d26359468a17427162>::operator()+0x85
+    combase!CRpcResolver::GetConnection+0x8c
+    combase!CoInitializeSecurity+0xb0
+    xul!mozilla::mscom::ProcessRuntime::InitializeSecurity+0xcfd
+    xul!mozilla::mscom::ProcessRuntime::InitInsideApartment+0x70
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x229
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x24
+    xul!mozilla::dom::ContentProcess::ContentProcess+0x72
+    xul!XRE_InitChildProcess+0xa10
+
+
+8 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!GetDpiForSystem+0x44
+    user32!LoadIcoCur+0xff
+    user32!RegisterIMEClass+0x99
+    user32!VerNtUserCreateWindowEx+0xf0
+    user32!CreateWindowInternal+0x1b4
+    user32!CreateWindowExW+0x82
+    combase!InitMainThreadWnd+0x56
+    combase!ThreadFirstInitialize+0x1e7
+    combase!_CoInitializeEx+0x1a1
+    combase!CoInitializeEx+0x36
+    xul!mozilla::mscom::ApartmentRegion::Init+0x87
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x186
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x24
+    xul!mozilla::dom::ContentProcess::ContentProcess+0x72
+    xul!XRE_InitChildProcess+0xa10
+    xul!mozilla::BootstrapImpl::XRE_InitChildProcess+0x2a
+
+
+8 - win32u!NtUserQueryDisplayConfig
+    win32u!NtUserQueryDisplayConfig
+    user32!QueryDisplayConfig+0x74
+    dwrite!DWriteRenderingParams::GetMonitorInvertedFromDeviceName+0xc2
+    dwrite!DWriteRenderingParams::CreateRenderingParamsFromDeviceName+0x1da
+    dwrite!DWriteRenderingParams::Create+0x19
+    dwrite!DWriteFactory::CreateRenderingParamsInternal+0x47
+    xul!gfxWindowsPlatform::SetupClearTypeParams+0x438
+    xul!gfxWindowsPlatform::InitDWriteSupport+0x8d
+    xul!gfxWindowsPlatform::InitAcceleration+0xa2
+    xul!gfxPlatform::Init+0x89d
+    xul!gfxPlatform::InitChild+0xcd
+    xul!mozilla::dom::ContentChild::InitGraphicsDeviceData+0x18
+
+
+8 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!GetDpiForSystem+0x44
+    UxTheme!_InternalSystemParametersInfo+0x18
+    UxTheme!ThemeSystemParametersInfoW+0xb2
+    user32!SystemParametersInfoW+0x93
+    dwrite!DWriteRenderingParams::DetermineCompatibleSmoothingMode+0x40
+    dwrite!DWriteRenderingParams::DWriteRenderingParams+0x2b
+    dwrite!ComObject<DWriteRenderingParams,DeleteOnZeroReference>::ComObject<DWriteRenderingParams,DeleteOnZeroReference><float
+    dwrite!DWriteFactory::CreateCustomRenderingParams+0x106
+    xul!gfxWindowsPlatform::SetupClearTypeParams+0x7f0
+    xul!gfxWindowsPlatform::InitDWriteSupport+0x8d
+    xul!gfxWindowsPlatform::InitAcceleration+0xa2
+    xul!gfxPlatform::Init+0x89d
+    xul!gfxPlatform::InitChild+0xcd
+    xul!mozilla::dom::ContentChild::InitGraphicsDeviceData+0x18
+
+
+8 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!GetDpiForSystem+0x44
+    UxTheme!_InternalSystemParametersInfo+0x18
+    UxTheme!ThemeSystemParametersInfoW+0xb2
+    user32!SystemParametersInfoW+0x93
+    dwrite!DWriteRenderingParams::DetermineCompatibleSmoothingMode+0x20
+    dwrite!DWriteRenderingParams::DWriteRenderingParams+0x2b
+    dwrite!ComObject<DWriteRenderingParams,DeleteOnZeroReference>::ComObject<DWriteRenderingParams,DeleteOnZeroReference><float
+    dwrite!DWriteFactory::CreateCustomRenderingParams+0x106
+    xul!gfxWindowsPlatform::SetupClearTypeParams+0x901
+    xul!gfxWindowsPlatform::InitDWriteSupport+0x8d
+    xul!gfxWindowsPlatform::InitAcceleration+0xa2
+    xul!gfxPlatform::Init+0x89d
+    xul!gfxPlatform::InitChild+0xcd
+    xul!mozilla::dom::ContentChild::InitGraphicsDeviceData+0x18
+
+
+8 - win32u!NtUserGetProcessUIContextInformation
+    win32u!NtUserGetProcessUIContextInformation
+    user32!ClientThreadSetup+0x15c
+    user32!_ClientThreadSetup+0x9
+    ntdll!KiUserCallbackDispatcherContinue
+    win32u!NtGdiInit+0x14
+    gdi32full!GdiDllInitialize+0x4e
+    user32!_UserClientDllInitialize+0x41b
+    ntdll!LdrpCallInitRoutine+0x6f
+    ntdll!LdrpInitializeNode+0x1c1
+    ntdll!LdrpInitializeGraphRecurse+0x80
+    ntdll!LdrpPrepareModuleForExecution+0xc5
+    ntdll!LdrpLoadDllInternal+0x199
+    ntdll!LdrpLoadDll+0xa8
+    ntdll!LdrLoadDll+0xe4
+    mozglue!mozilla::interceptor::FuncHook<mozilla::interceptor::WindowsDllInterceptor<mozilla::interceptor::VMSharingPolicyShared<mozilla::interceptor::MMPolicyInProcess,128>
+    mozglue!patched_LdrLoadDll+0xae6
+    KERNELBASE!LoadLibraryExW+0x161
+    mozglue!DllBlocklist_Initialize+0x228
+    firefox!NS_internal_main+0x6f
+    firefox!wmain+0x2a7
+    firefox!__scrt_common_main_seh+0x10c
+    KERNEL32!BaseThreadInitThunk+0x14
+    ntdll!RtlUserThreadStart+0x21
+
+
+8 - win32u!NtGdiFlush
+    win32u!NtGdiFlush
+    gdi32full!GdiFlush+0xb
+    xul!_create_dc_and_bitmap+0x634
+    xul!_cairo_win32_surface_create_for_dc+0xfe
+    xul!_moz_cairo_win32_surface_create_with_dib+0x2e
+    xul!gfxWindowsSurface::gfxWindowsSurface+0xaf
+    xul!gfxWindowsPlatform::CreateOffscreenSurface+0xf8
+    xul!gfxPlatform::Init+0xac0
+
+
+8 - win32u!NtUserRegisterWindowMessage
+    win32u!NtUserRegisterWindowMessage
+    user32!RegisterWindowMessageW+0x2c
+    xul!std::vector<tagMSG,std::allocator<tagMSG>
+    xul!_GLOBAL__sub_I_Unified_cpp_widget_windows1.cpp+0x1d
+    ucrtbase!initterm+0x43
+    xul!dllmain_crt_process_attach+0xae
+    xul!dllmain_dispatch+0x74
+    ntdll!LdrpCallInitRoutine+0x6f
+
+
+8 - win32u!NtUserGetProcessWindowStation
+    win32u!NtUserGetProcessWindowStation
+    combase!CRpcResolver::GetThreadWinstaDesktop+0x6a
+    combase!<lambda_42f1a29483ec03d26359468a17427162>::operator()+0x85
+    combase!CRpcResolver::GetConnection+0x8c
+    combase!CoInitializeSecurity+0xb0
+    xul!mozilla::mscom::ProcessRuntime::InitializeSecurity+0xcfd
+    xul!mozilla::mscom::ProcessRuntime::InitInsideApartment+0x70
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x229
+    xul!mozilla::mscom::ProcessRuntime::ProcessRuntime+0x24
+    xul!mozilla::dom::ContentProcess::ContentProcess+0x72
+    xul!XRE_InitChildProcess+0xa10
+
+
+8 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoW+0x84
+    UxTheme!ClassicSystemParametersInfoW+0x41
+    UxTheme!_InternalSystemParametersInfo+0x10
+    UxTheme!ThemeSystemParametersInfoW+0xaa
+    user32!SystemParametersInfoW+0x93
+    dwrite!DWriteRenderingParams::CreateRenderingParamsFromDeviceName+0x1bd
+    dwrite!DWriteRenderingParams::Create+0x19
+    dwrite!DWriteFactory::CreateRenderingParamsInternal+0x47
+    xul!gfxWindowsPlatform::SetupClearTypeParams+0x438
+    xul!gfxWindowsPlatform::InitDWriteSupport+0x8d
+    xul!gfxWindowsPlatform::InitAcceleration+0xa2
+    xul!gfxPlatform::Init+0x89d
+    xul!gfxPlatform::InitChild+0xcd
+    xul!mozilla::dom::ContentChild::InitGraphicsDeviceData+0x18
+
+
+7 - win32u!NtGdiGetDeviceCaps
+    win32u!NtGdiGetDeviceCaps
+    GDI32!GetDeviceCaps+0x12d
+    UxTheme!GetScreenDpi+0x1c1
+    UxTheme!_OpenThemeData+0x2dd
+    UxTheme!OpenThemeDataExInternal+0x33
+    UxTheme!OpenThemeData+0x57
+    xul!nsUXThemeData::GetTheme+0x6f
+    xul!GetColorFromTheme+0x57
+    xul!nsLookAndFeel::EnsureInit+0xe2
+    xul!nsLookAndFeel::NativeGetColor+0x21
+    xul!nsXPLookAndFeel::GetColorImpl+0x204
+    xul!mozilla::LookAndFeel::GetColor+0x26
+
+
+7 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!GetDpiForSystem+0x44
+    UxTheme!_InternalSystemParametersInfo+0x18
+    UxTheme!ThemeSystemParametersInfoW+0xb2
+    user32!SystemParametersInfoW+0x93
+    UxTheme!IsHighContrastMode+0x2a
+    UxTheme!IsThemeActive+0x5a
+    UxTheme!IsAppThemed+0x16
+    xul!nsLookAndFeel::GetIntImpl+0x2ad
+    xul!mozilla::LookAndFeel::GetInt+0x25
+    xul!nsMediaFeatures::InitSystemMetrics+0x61c
+    xul!Gecko_MediaFeatures_HasSystemMetric+0x57
+    xul!style::gecko::media_features::eval_system_metric+0x60
+    xul!style::gecko::media_features::{{impl}}::deref::__static_ref_initialize::__eval+0x50
+
+
+7 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoW+0x84
+    UxTheme!ClassicSystemParametersInfoW+0x41
+    UxTheme!_InternalSystemParametersInfo+0x10
+    UxTheme!ThemeSystemParametersInfoW+0xaa
+    user32!SystemParametersInfoW+0x93
+    UxTheme!IsHighContrastMode+0x26
+    UxTheme!OpenThemeData+0x1a
+    xul!nsUXThemeData::GetTheme+0x6f
+    xul!GetColorFromTheme+0x57
+    xul!nsLookAndFeel::EnsureInit+0x182
+    xul!nsLookAndFeel::NativeGetColor+0x21
+    xul!nsXPLookAndFeel::GetColorImpl+0x204
+    xul!mozilla::LookAndFeel::GetColor+0x26
+
+
+7 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoW+0x84
+    UxTheme!ClassicSystemParametersInfoW+0x41
+    UxTheme!_InternalSystemParametersInfo+0x10
+    UxTheme!ThemeSystemParametersInfoW+0xaa
+    user32!SystemParametersInfoW+0x93
+    UxTheme!IsHighContrastMode+0x2a
+    UxTheme!IsThemeActive+0x5a
+    UxTheme!IsAppThemed+0x16
+    xul!nsLookAndFeel::GetIntImpl+0x2ad
+    xul!mozilla::LookAndFeel::GetInt+0x25
+    xul!nsMediaFeatures::InitSystemMetrics+0x61c
+    xul!Gecko_MediaFeatures_HasSystemMetric+0x57
+    xul!style::gecko::media_features::eval_system_metric+0x60
+    xul!style::gecko::media_features::{{impl}}::deref::__static_ref_initialize::__eval+0x50
+
+
+7 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!GetDpiForSystem+0x44
+    UxTheme!_InternalSystemParametersInfo+0x18
+    UxTheme!ThemeSystemParametersInfoW+0xb2
+    user32!SystemParametersInfoW+0x93
+    UxTheme!IsHighContrastMode+0x26
+    UxTheme!OpenThemeData+0x1a
+    xul!nsUXThemeData::GetTheme+0x6f
+    xul!GetColorFromTheme+0x57
+    xul!nsLookAndFeel::EnsureInit+0xe2
+    xul!nsLookAndFeel::NativeGetColor+0x21
+    xul!nsXPLookAndFeel::GetColorImpl+0x204
+    xul!mozilla::LookAndFeel::GetColor+0x26
+
+
+7 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!GetDpiForSystem+0x44
+    UxTheme!_InternalSystemParametersInfo+0x18
+    UxTheme!ThemeSystemParametersInfoW+0xb2
+    user32!SystemParametersInfoW+0x93
+    UxTheme!IsHighContrastMode+0x26
+    UxTheme!OpenThemeData+0x1a
+    xul!nsUXThemeData::GetTheme+0x6f
+    xul!GetColorFromTheme+0x57
+    xul!nsLookAndFeel::EnsureInit+0x132
+    xul!nsLookAndFeel::NativeGetColor+0x21
+    xul!nsXPLookAndFeel::GetColorImpl+0x204
+    xul!mozilla::LookAndFeel::GetColor+0x26
+
+
+7 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoW+0x84
+    UxTheme!ClassicSystemParametersInfoW+0x41
+    UxTheme!_InternalSystemParametersInfo+0x10
+    UxTheme!ThemeSystemParametersInfoW+0xaa
+    user32!SystemParametersInfoW+0x93
+    UxTheme!IsHighContrastMode+0x26
+    UxTheme!OpenThemeData+0x1a
+    xul!nsUXThemeData::GetTheme+0x6f
+    xul!GetColorFromTheme+0x57
+    xul!nsLookAndFeel::EnsureInit+0xe2
+    xul!nsLookAndFeel::NativeGetColor+0x21
+    xul!nsXPLookAndFeel::GetColorImpl+0x204
+    xul!mozilla::LookAndFeel::GetColor+0x26
+
+
+7 - win32u!NtUserReleaseDC
+    win32u!NtUserReleaseDC
+    UxTheme!GetScreenDpi+0x1d2
+    UxTheme!_OpenThemeData+0x2ee
+    UxTheme!OpenThemeDataExInternal+0x33
+    UxTheme!OpenThemeData+0x57
+    xul!nsUXThemeData::GetTheme+0x6f
+    xul!GetColorFromTheme+0x57
+    xul!nsLookAndFeel::EnsureInit+0xe2
+    xul!nsLookAndFeel::NativeGetColor+0x21
+    xul!nsXPLookAndFeel::GetColorImpl+0x204
+    xul!mozilla::LookAndFeel::GetColor+0x26
+
+
+7 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!GetDpiForSystem+0x44
+    UxTheme!_InternalSystemParametersInfo+0x18
+    UxTheme!ThemeSystemParametersInfoW+0xb2
+    user32!SystemParametersInfoW+0x93
+    UxTheme!IsHighContrastMode+0x26
+    UxTheme!OpenThemeData+0x1a
+    xul!nsUXThemeData::GetTheme+0x6f
+    xul!GetColorFromTheme+0x57
+    xul!nsLookAndFeel::EnsureInit+0x182
+    xul!nsLookAndFeel::NativeGetColor+0x21
+    xul!nsXPLookAndFeel::GetColorImpl+0x204
+    xul!mozilla::LookAndFeel::GetColor+0x26
+
+
+7 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoW+0x84
+    UxTheme!ClassicSystemParametersInfoW+0x41
+    UxTheme!_InternalSystemParametersInfo+0x10
+    UxTheme!ThemeSystemParametersInfoW+0xaa
+    user32!SystemParametersInfoW+0x93
+    UxTheme!IsHighContrastMode+0x26
+    UxTheme!OpenThemeData+0x1a
+    xul!nsUXThemeData::GetTheme+0x6f
+    xul!GetColorFromTheme+0x57
+    xul!nsLookAndFeel::EnsureInit+0x132
+    xul!nsLookAndFeel::NativeGetColor+0x21
+    xul!nsXPLookAndFeel::GetColorImpl+0x204
+    xul!mozilla::LookAndFeel::GetColor+0x26
+
+
+7 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!GetDpiForSystem+0x44
+    UxTheme!_InternalSystemParametersInfo+0x18
+    UxTheme!ThemeSystemParametersInfoW+0xb2
+    user32!SystemParametersInfoW+0x93
+    UxTheme!IsHighContrastMode+0x2a
+    UxTheme!IsThemeActive+0x5a
+    UxTheme!IsAppThemed+0x16
+    xul!nsLookAndFeel::EnsureInit+0xb0
+    xul!nsLookAndFeel::NativeGetColor+0x21
+    xul!nsXPLookAndFeel::GetColorImpl+0x204
+    xul!mozilla::LookAndFeel::GetColor+0x26
+    xul!nsWebBrowser::Create+0x4a1
+    xul!mozilla::dom::TabChild::Init+0x310
+
+
+7 - win32u!NtUserGetDC
+    win32u!NtUserGetDC
+    UxTheme!GetScreenDpi+0x1a7
+    UxTheme!_OpenThemeData+0x2c3
+    UxTheme!OpenThemeDataExInternal+0x33
+    UxTheme!OpenThemeData+0x57
+    xul!nsUXThemeData::GetTheme+0x6f
+    xul!GetColorFromTheme+0x57
+    xul!nsLookAndFeel::EnsureInit+0xe2
+    xul!nsLookAndFeel::NativeGetColor+0x21
+    xul!nsXPLookAndFeel::GetColorImpl+0x204
+    xul!mozilla::LookAndFeel::GetColor+0x26
+
+
+6 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoW+0x84
+    UxTheme!ClassicSystemParametersInfoW+0x41
+    UxTheme!_InternalSystemParametersInfo+0x10
+    UxTheme!ThemeSystemParametersInfoW+0xaa
+    user32!SystemParametersInfoW+0x93
+    UxTheme!IsHighContrastMode+0x2a
+    UxTheme!IsThemeActive+0x5a
+    UxTheme!IsAppThemed+0x16
+    xul!nsLookAndFeel::EnsureInit+0xb0
+    xul!nsLookAndFeel::NativeGetColor+0x21
+    xul!nsXPLookAndFeel::GetColorImpl+0x204
+    xul!mozilla::LookAndFeel::GetColor+0x26
+    xul!nsWebBrowser::Create+0x4a1
+    xul!mozilla::dom::TabChild::Init+0x310
+
+
+5 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoW+0x84
+    UxTheme!ClassicSystemParametersInfoW+0x41
+    UxTheme!_InternalSystemParametersInfo+0x10
+    UxTheme!ThemeSystemParametersInfoW+0xaa
+    user32!SystemParametersInfoW+0x93
+    UxTheme!IsHighContrastMode+0x26
+    UxTheme!OpenThemeData+0x1a
+    xul!nsUXThemeData::GetTheme+0x6f
+    xul!nsNativeThemeWin::GetTheme+0x6e
+    xul!nsNativeThemeWin::ThemeSupportsWidget+0xa7
+    xul!nsBox::GetXULBorder+0xe0
+    xul!nsIFrame::GetXULBorderAndPadding+0x60
+    xul!nsIFrame::GetXULClientRect+0x72
+
+
+5 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!GetDpiForSystem+0x44
+    UxTheme!_InternalSystemParametersInfo+0x18
+    UxTheme!ThemeSystemParametersInfoW+0xb2
+    user32!SystemParametersInfoW+0x93
+    UxTheme!IsHighContrastMode+0x26
+    UxTheme!OpenThemeData+0x1a
+    xul!nsUXThemeData::GetTheme+0x6f
+    xul!nsNativeThemeWin::GetTheme+0x6e
+    xul!nsNativeThemeWin::ThemeSupportsWidget+0xa7
+    xul!nsBox::GetXULBorder+0xe0
+    xul!nsIFrame::GetXULBorderAndPadding+0x60
+    xul!nsIFrame::GetXULClientRect+0x72
+
+
+4 - win32u!NtGdiDeleteObjectApp
+    win32u!NtGdiDeleteObjectApp
+    GDI32!InternalDeleteDC+0x236
+    GDI32!DeleteDC+0x13
+    xul!_cairo_win32_surface_finish+0x98
+    xul!_moz_cairo_surface_finish+0xb1
+    xul!_moz_cairo_surface_destroy+0x113
+    xul!gfxASurface::Release+0x87
+    xul!mozilla::RefPtrTraits<gfxASurface>::Release+0x13
+    xul!RefPtr<gfxASurface>::ConstRemovingRefPtrTraits<gfxASurface>::Release+0x13
+
+
+4 - win32u!NtGdiDeleteObjectApp
+    win32u!NtGdiDeleteObjectApp
+    GDI32!InternalDeleteObject+0x2a3
+    GDI32!DeleteObject+0xe
+    xul!_cairo_win32_surface_finish+0x82
+    xul!_moz_cairo_surface_finish+0xb1
+    xul!_moz_cairo_surface_destroy+0x113
+    xul!gfxASurface::Release+0x87
+    xul!mozilla::RefPtrTraits<gfxASurface>::Release+0x13
+    xul!RefPtr<gfxASurface>::ConstRemovingRefPtrTraits<gfxASurface>::Release+0x13
+
+
+4 - win32u!NtGdiSelectBitmap
+    win32u!NtGdiSelectBitmap
+    gdi32full!SelectObjectImpl+0x1f6
+    xul!_cairo_win32_surface_finish+0x6b
+    xul!_moz_cairo_surface_finish+0xb1
+    xul!_moz_cairo_surface_destroy+0x113
+    xul!gfxASurface::Release+0x87
+    xul!mozilla::RefPtrTraits<gfxASurface>::Release+0x13
+    xul!RefPtr<gfxASurface>::ConstRemovingRefPtrTraits<gfxASurface>::Release+0x13
+
+
+3 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoW+0x84
+    UxTheme!ClassicSystemParametersInfoW+0x41
+    UxTheme!_InternalSystemParametersInfo+0x10
+    UxTheme!ThemeSystemParametersInfoW+0xaa
+    user32!SystemParametersInfoW+0x93
+    UxTheme!IsHighContrastMode+0x26
+    UxTheme!OpenThemeData+0x1a
+    xul!nsUXThemeData::GetTheme+0x6f
+    xul!nsNativeThemeWin::GetTheme+0x6e
+    xul!nsNativeThemeWin::ThemeSupportsWidget+0xa7
+    xul!nsBox::GetXULBorder+0xe0
+    xul!nsIFrame::GetXULBorderAndPadding+0x60
+    xul!nsBox::AddBorderAndPadding+0x52
+
+
+3 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoW+0x84
+    UxTheme!ClassicSystemParametersInfoW+0x41
+    UxTheme!_InternalSystemParametersInfo+0x10
+    UxTheme!ThemeSystemParametersInfoW+0xaa
+    user32!SystemParametersInfoW+0x93
+    xul!GetSysFontInfo+0xd7
+    xul!nsLookAndFeel::GetFontImpl+0xd2
+    xul!mozilla::LookAndFeel::GetFont+0x2f
+    xul!nsLayoutUtils::ComputeSystemFont+0x7c
+    xul!Gecko_nsFont_InitSystem+0xba
+    xul!style::properties::longhands::system_font::{{impl}}::to_computed_value+0x200
+
+
+3 - win32u!NtGdiFlush
+    win32u!NtGdiFlush
+    gdi32full!GdiFlush+0xb
+    xul!_create_dc_and_bitmap+0x634
+    xul!_cairo_win32_surface_create_for_dc+0xfe
+    xul!_moz_cairo_win32_surface_create_with_dib+0x2e
+    xul!gfxWindowsSurface::gfxWindowsSurface+0xaf
+    xul!gfxWindowsPlatform::CreateOffscreenSurface+0xf8
+    xul!nsDeviceContextSpecProxy::MakePrintTarget+0x1e1
+
+
+3 - win32u!NtGdiCreateCompatibleDC
+    win32u!NtGdiCreateCompatibleDC
+    gdi32full!CreateCompatibleDC+0x14
+    xul!_create_dc_and_bitmap+0x583
+    xul!_cairo_win32_surface_create_for_dc+0xfe
+    xul!_moz_cairo_win32_surface_create_with_dib+0x2e
+    xul!gfxWindowsSurface::gfxWindowsSurface+0xaf
+    xul!gfxWindowsPlatform::CreateOffscreenSurface+0xf8
+    xul!nsDeviceContextSpecProxy::MakePrintTarget+0x1e1
+
+
+3 - win32u!NtUserGetDC
+    win32u!NtUserGetDC
+    xul!nsLookAndFeel::GetFontImpl+0xb2
+    xul!mozilla::LookAndFeel::GetFont+0x2f
+    xul!nsLayoutUtils::ComputeSystemFont+0x7c
+    xul!Gecko_nsFont_InitSystem+0xba
+    xul!style::properties::longhands::system_font::{{impl}}::to_computed_value+0x200
+    xul!style::properties::longhands::system_font::resolve_system_font+0x70
+
+
+3 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!GetDpiForSystem+0x44
+    UxTheme!_InternalSystemParametersInfo+0x18
+    UxTheme!ThemeSystemParametersInfoW+0xb2
+    user32!SystemParametersInfoW+0x93
+    UxTheme!IsHighContrastMode+0x26
+    UxTheme!OpenThemeData+0x1a
+    xul!nsUXThemeData::GetTheme+0x6f
+    xul!nsNativeThemeWin::GetTheme+0x6e
+    xul!nsNativeThemeWin::ThemeSupportsWidget+0xa7
+    xul!nsBox::GetXULBorder+0xe0
+    xul!nsIFrame::GetXULBorderAndPadding+0x60
+    xul!nsBox::AddBorderAndPadding+0x52
+
+
+3 - win32u!NtUserReleaseDC
+    win32u!NtUserReleaseDC
+    xul!nsLookAndFeel::GetFontImpl+0xe7
+    xul!mozilla::LookAndFeel::GetFont+0x2f
+    xul!nsLayoutUtils::ComputeSystemFont+0x7c
+    xul!Gecko_nsFont_InitSystem+0xba
+    xul!style::properties::longhands::system_font::{{impl}}::to_computed_value+0x200
+    xul!style::properties::longhands::system_font::resolve_system_font+0x70
+
+
+3 - win32u!NtGdiCreateDIBSection
+    win32u!NtGdiCreateDIBSection
+    gdi32full!CreateDIBSectionInternal+0x18c
+    gdi32full!CreateDIBSection+0x25
+    GDI32!CreateDIBSectionStub+0x55
+    xul!_create_dc_and_bitmap+0x5f2
+    xul!_cairo_win32_surface_create_for_dc+0xfe
+    xul!_moz_cairo_win32_surface_create_with_dib+0x2e
+    xul!gfxWindowsSurface::gfxWindowsSurface+0xaf
+    xul!gfxWindowsPlatform::CreateOffscreenSurface+0xf8
+    xul!nsDeviceContextSpecProxy::MakePrintTarget+0x1e1
+
+
+3 - win32u!NtUserGetProcessDpiAwarenessContext
+    win32u!NtUserGetProcessDpiAwarenessContext
+    user32!GetProcessDpiAwarenessInternal+0x16
+    shcore!GetProcessDpiAwareness+0xa
+    xul!mozilla::widget::SlowIsPerMonitorDPIAware+0xb9
+    xul!mozilla::widget::WinUtils::IsPerMonitorDPIAware+0x4b
+    xul!GetThemeDpiScaleFactor+0x1d
+    xul!ScaleForFrameDPI+0x18
+    xul!nsNativeThemeWin::GetWidgetBorder+0x516
+    xul!nsBox::GetXULBorder+0x150
+
+
+3 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!GetDpiForSystem+0x44
+    UxTheme!_InternalSystemParametersInfo+0x18
+    UxTheme!ThemeSystemParametersInfoW+0xb2
+    user32!SystemParametersInfoW+0x93
+    xul!GetSysFontInfo+0xd7
+    xul!nsLookAndFeel::GetFontImpl+0xd2
+    xul!mozilla::LookAndFeel::GetFont+0x2f
+    xul!nsLayoutUtils::ComputeSystemFont+0x7c
+    xul!Gecko_nsFont_InitSystem+0xba
+    xul!style::properties::longhands::system_font::{{impl}}::to_computed_value+0x200
+
+
+3 - win32u!NtGdiSelectBitmap
+    win32u!NtGdiSelectBitmap
+    gdi32full!SelectObjectImpl+0x1f6
+    xul!_create_dc_and_bitmap+0x669
+    xul!_cairo_win32_surface_create_for_dc+0xfe
+    xul!_moz_cairo_win32_surface_create_with_dib+0x2e
+    xul!gfxWindowsSurface::gfxWindowsSurface+0xaf
+    xul!gfxWindowsPlatform::CreateOffscreenSurface+0xf8
+    xul!nsDeviceContextSpecProxy::MakePrintTarget+0x1e1
+
+
+2 - win32u!NtUserReleaseDC
+    win32u!NtUserReleaseDC
+    xul!mozilla::widget::WinUtils::SystemDPI+0x4e
+    xul!mozilla::widget::WinUtils::SystemScaleFactor+0x9
+    xul!GetThemeDpiScaleFactor+0x5f
+    xul!ScaleForFrameDPI+0x18
+    xul!nsNativeThemeWin::GetWidgetBorder+0x516
+    xul!nsBox::GetXULBorder+0x150
+
+
+2 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoW+0x84
+    UxTheme!ClassicSystemParametersInfoW+0x41
+    UxTheme!_InternalSystemParametersInfo+0x10
+    UxTheme!ThemeSystemParametersInfoW+0xaa
+    user32!SystemParametersInfoW+0x93
+    UxTheme!IsHighContrastMode+0x26
+    UxTheme!OpenThemeData+0x1a
+    xul!nsUXThemeData::GetTheme+0x6f
+    xul!nsNativeThemeWin::GetTheme+0x6e
+    xul!nsNativeThemeWin::ThemeSupportsWidget+0xa7
+    xul!nsIFrame::IsThemed+0x99
+    xul!mozilla::SizeComputationInput::InitOffsets+0x1ff
+    xul!mozilla::ReflowInput::InitConstraints+0x896
+
+
+2 - win32u!NtUserGetDC
+    win32u!NtUserGetDC
+    xul!mozilla::widget::WinUtils::SystemDPI+0x1e
+    xul!mozilla::widget::WinUtils::SystemScaleFactor+0x9
+    xul!GetThemeDpiScaleFactor+0x5f
+    xul!ScaleForFrameDPI+0x18
+    xul!nsNativeThemeWin::GetMinimumWidgetSize+0x2e6
+    xul!nsIFrame::AddXULMinSize+0x1e9
+
+
+2 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoW+0x84
+    UxTheme!ClassicSystemParametersInfoW+0x41
+    UxTheme!_InternalSystemParametersInfo+0x10
+    UxTheme!ThemeSystemParametersInfoW+0xaa
+    user32!SystemParametersInfoW+0x93
+    UxTheme!IsHighContrastMode+0x26
+    UxTheme!OpenThemeData+0x1a
+    xul!nsUXThemeData::GetTheme+0x6f
+    xul!nsNativeThemeWin::GetTheme+0x6e
+    xul!nsNativeThemeWin::ThemeSupportsWidget+0xa7
+    xul!nsIFrame::AddXULMinSize+0x138
+    xul!nsBoxFrame::GetXULMinSize+0x169
+    xul!GetScrollbarMetrics+0x9d
+
+
+2 - win32u!NtGdiGetDeviceCaps
+    win32u!NtGdiGetDeviceCaps
+    GDI32!GetDeviceCaps+0x12d
+    xul!mozilla::widget::WinUtils::SystemDPI+0x33
+    xul!mozilla::widget::WinUtils::SystemScaleFactor+0x9
+    xul!GetThemeDpiScaleFactor+0x5f
+    xul!ScaleForFrameDPI+0x18
+    xul!nsNativeThemeWin::GetMinimumWidgetSize+0x2e6
+    xul!nsIFrame::AddXULMinSize+0x1e9
+
+
+2 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!GetDpiForSystem+0x44
+    UxTheme!_InternalSystemParametersInfo+0x18
+    UxTheme!ThemeSystemParametersInfoW+0xb2
+    user32!SystemParametersInfoW+0x93
+    UxTheme!IsHighContrastMode+0x26
+    UxTheme!OpenThemeData+0x1a
+    xul!nsUXThemeData::GetTheme+0x6f
+    xul!nsNativeThemeWin::GetTheme+0x6e
+    xul!nsNativeThemeWin::ThemeSupportsWidget+0xa7
+    xul!nsIFrame::AddXULMinSize+0x138
+    xul!nsBoxFrame::GetXULMinSize+0x169
+    xul!GetScrollbarMetrics+0x9d
+
+
+2 - win32u!NtUserReleaseDC
+    win32u!NtUserReleaseDC
+    xul!mozilla::widget::WinUtils::SystemDPI+0x4e
+    xul!mozilla::widget::WinUtils::SystemScaleFactor+0x9
+    xul!GetThemeDpiScaleFactor+0x5f
+    xul!ScaleForFrameDPI+0x18
+    xul!nsNativeThemeWin::GetMinimumWidgetSize+0x2e6
+    xul!nsIFrame::AddXULMinSize+0x1e9
+
+
+2 - win32u!NtUserGetDC
+    win32u!NtUserGetDC
+    xul!mozilla::widget::WinUtils::SystemDPI+0x1e
+    xul!mozilla::widget::WinUtils::SystemScaleFactor+0x9
+    xul!GetThemeDpiScaleFactor+0x5f
+    xul!ScaleForFrameDPI+0x18
+    xul!nsNativeThemeWin::GetWidgetBorder+0x516
+    xul!nsBox::GetXULBorder+0x150
+
+
+2 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!GetDpiForSystem+0x44
+    UxTheme!_InternalSystemParametersInfo+0x18
+    UxTheme!ThemeSystemParametersInfoW+0xb2
+    user32!SystemParametersInfoW+0x93
+    UxTheme!IsHighContrastMode+0x26
+    UxTheme!OpenThemeData+0x1a
+    xul!nsUXThemeData::GetTheme+0x6f
+    xul!nsNativeThemeWin::GetTheme+0x6e
+    xul!nsNativeThemeWin::ThemeSupportsWidget+0xa7
+    xul!nsIFrame::IsThemed+0x99
+    xul!mozilla::SizeComputationInput::InitOffsets+0x1ff
+    xul!mozilla::ReflowInput::InitConstraints+0x896
+
+
+2 - win32u!NtGdiGetDeviceCaps
+    win32u!NtGdiGetDeviceCaps
+    GDI32!GetDeviceCaps+0x12d
+    xul!mozilla::widget::WinUtils::SystemDPI+0x33
+    xul!mozilla::widget::WinUtils::SystemScaleFactor+0x9
+    xul!GetThemeDpiScaleFactor+0x5f
+    xul!ScaleForFrameDPI+0x18
+    xul!nsNativeThemeWin::GetWidgetBorder+0x516
+    xul!nsBox::GetXULBorder+0x150
+
+
+2 - win32u!NtUserGetProcessDpiAwarenessContext
+    win32u!NtUserGetProcessDpiAwarenessContext
+    user32!GetProcessDpiAwarenessInternal+0x16
+    shcore!GetProcessDpiAwareness+0xa
+    xul!mozilla::widget::SlowIsPerMonitorDPIAware+0xb9
+    xul!mozilla::widget::WinUtils::IsPerMonitorDPIAware+0x4b
+    xul!GetThemeDpiScaleFactor+0x1d
+    xul!ScaleForFrameDPI+0x18
+    xul!nsNativeThemeWin::GetMinimumWidgetSize+0x2e6
+    xul!nsIFrame::AddXULMinSize+0x1e9
+
+
+2 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!RealGetSystemMetrics+0x121
+    UxTheme!ThemeGetSystemMetrics+0x24
+    to
+    user32!GetSystemMetrics+0x80
+    xul!nsNativeThemeWin::ClassicGetMinimumWidgetSize+0x3c6
+    xul!nsNativeThemeWin::GetMinimumWidgetSize+0x2ca
+    xul!nsIFrame::AddXULMinSize+0x1e9
+    xul!nsBoxFrame::GetXULMinSize+0x169
+    xul!nsBoxFrame::GetXULPrefSize+0x29c
+    xul!nsSprocketLayout::GetXULPrefSize+0x14f
+
+
+1 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoA+0xf4
+    UxTheme!ClassicSystemParametersInfoA+0x41
+    UxTheme!_InternalSystemParametersInfo+0x10
+    UxTheme!ThemeSystemParametersInfoA+0xaa
+    to
+    user32!SystemParametersInfoA+0x9b
+    xul!_moz_cairo_win32_get_system_text_quality+0x36
+    xul!_cairo_dwrite_font_face_scaled_font_create+0x24e
+    xul!_moz_cairo_scaled_font_create+0x71c
+    xul!gfxDWriteFont::InitCairoScaledFont+0xc8
+    xul!gfxDWriteFont::SetupCairoFont+0x18
+    xul!gfxFont::GetRoundOffsetsToPixels+0xab
+
+
+1 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!GetDpiForSystem+0x44
+    UxTheme!_InternalSystemParametersInfo+0x18
+    UxTheme!ThemeSystemParametersInfoW+0xb2
+    user32!SystemParametersInfoW+0x93
+    dwrite!DWriteRenderingParams::DetermineCompatibleSmoothingMode+0x40
+    dwrite!DWriteRenderingParams::DWriteRenderingParams+0x2b
+    dwrite!ComObject<DWriteRenderingParams,DeleteOnZeroReference>::ComObject<DWriteRenderingParams,DeleteOnZeroReference><float
+    dwrite!DWriteRenderingParams::CreateRenderingParamsFromDeviceName+0x258
+    dwrite!DWriteRenderingParams::Create+0x19
+    dwrite!DWriteFactory::CreateRenderingParamsInternal+0x47
+    xul!create_dwrite_rendering_params+0x46
+    xul!SkOnce::operator()<void
+    xul!sk_get_dwrite_default_rendering_params+0x3a
+    xul!SkScalerContext_DW::SkScalerContext_DW+0x763
+    xul!DWriteFontTypeface::onCreateScalerContext+0x81
+    xul!SkTypeface::createScalerContext+0x6f
+
+
+1 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoW+0x84
+    UxTheme!ClassicSystemParametersInfoW+0x41
+    UxTheme!_InternalSystemParametersInfo+0x10
+    UxTheme!ThemeSystemParametersInfoW+0xaa
+    user32!SystemParametersInfoW+0x93
+    dwrite!DWriteRenderingParams::DetermineCompatibleGamma+0x26
+    dwrite!DWriteRenderingParams::DWriteRenderingParams+0x32
+    dwrite!ComObject<DWriteRenderingParams,DeleteOnZeroReference>::ComObject<DWriteRenderingParams,DeleteOnZeroReference><float
+    dwrite!DWriteRenderingParams::CreateRenderingParamsFromDeviceName+0x258
+    dwrite!DWriteRenderingParams::Create+0x19
+    dwrite!DWriteFactory::CreateRenderingParamsInternal+0x47
+    xul!create_dwrite_rendering_params+0x46
+    xul!SkOnce::operator()<void
+    xul!sk_get_dwrite_default_rendering_params+0x3a
+    xul!SkScalerContext_DW::SkScalerContext_DW+0x763
+    xul!DWriteFontTypeface::onCreateScalerContext+0x81
+    xul!SkTypeface::createScalerContext+0x6f
+
+
+1 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!GetDpiForSystem+0x44
+    UxTheme!_InternalSystemParametersInfo+0x18
+    UxTheme!ThemeSystemParametersInfoW+0xb2
+    user32!SystemParametersInfoW+0x93
+    dwrite!DWriteRenderingParams::CreateRenderingParamsFromDeviceName+0x1bd
+    dwrite!DWriteRenderingParams::Create+0x19
+    dwrite!DWriteFactory::CreateRenderingParamsInternal+0x47
+    xul!create_dwrite_rendering_params+0x46
+    xul!SkOnce::operator()<void
+    xul!sk_get_dwrite_default_rendering_params+0x3a
+    xul!SkScalerContext_DW::SkScalerContext_DW+0x763
+    xul!DWriteFontTypeface::onCreateScalerContext+0x81
+    xul!SkTypeface::createScalerContext+0x6f
+
+
+1 - win32u!NtUserGetKeyboardLayout
+    win32u!NtUserGetKeyboardLayout
+    user32!GetKeyboardLayout+0x12
+    IMM32!_ImmDllInitialize+0xa6
+    ntdll!LdrpCallInitRoutine+0x6f
+    ntdll!LdrShutdownThread+0x154
+    ntdll!RtlExitUserThread+0x3e
+    KERNELBASE!FreeLibraryAndExitThread+0x4a
+    ucrtbase!common_end_thread+0xa4
+    ucrtbase!thread_start<unsigned
+    KERNEL32!BaseThreadInitThunk+0x14
+    mozglue!mozilla::interceptor::FuncHook<mozilla::interceptor::WindowsDllInterceptor<mozilla::interceptor::VMSharingPolicyShared<mozilla::interceptor::MMPolicyInProcess,128>
+    mozglue!patched_BaseThreadInitThunk+0x6f
+    ntdll!RtlUserThreadStart+0x21
+
+
+1 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoW+0x84
+    UxTheme!ClassicSystemParametersInfoW+0x41
+    UxTheme!_InternalSystemParametersInfo+0x10
+    UxTheme!ThemeSystemParametersInfoW+0xaa
+    user32!SystemParametersInfoW+0x93
+    UxTheme!IsHighContrastMode+0x2a
+    UxTheme!IsThemeActive+0x5a
+    to
+    UxTheme!IsAppThemed+0x16
+    xul!nsLookAndFeel::EnsureInit+0xb0
+    xul!nsLookAndFeel::NativeGetColor+0x21
+    xul!nsXPLookAndFeel::GetColorImpl+0x204
+    xul!mozilla::LookAndFeel::GetColor+0x26
+    xul!nsWebBrowser::Create+0x4a1
+    xul!mozilla::dom::TabChild::Init+0x310
+
+
+1 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoW+0x84
+    UxTheme!ClassicSystemParametersInfoW+0x41
+    UxTheme!_InternalSystemParametersInfo+0x10
+    UxTheme!ThemeSystemParametersInfoW+0xaa
+    user32!SystemParametersInfoW+0x93
+    dwrite!DWriteRenderingParams::DetermineCompatibleSmoothingMode+0x20
+    dwrite!DWriteRenderingParams::DWriteRenderingParams+0x2b
+    dwrite!ComObject<DWriteRenderingParams,DeleteOnZeroReference>::ComObject<DWriteRenderingParams,DeleteOnZeroReference><float
+    dwrite!DWriteRenderingParams::CreateRenderingParamsFromDeviceName+0x258
+    dwrite!DWriteRenderingParams::Create+0x19
+    dwrite!DWriteFactory::CreateRenderingParamsInternal+0x47
+    xul!create_dwrite_rendering_params+0x46
+    xul!SkOnce::operator()<void
+    xul!sk_get_dwrite_default_rendering_params+0x3a
+    xul!SkScalerContext_DW::SkScalerContext_DW+0x763
+    xul!DWriteFontTypeface::onCreateScalerContext+0x81
+    xul!SkTypeface::createScalerContext+0x6f
+
+
+1 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!RealGetSystemMetrics+0x121
+    UxTheme!ThemeGetSystemMetrics+0x24
+    to
+    user32!GetSystemMetrics+0x80
+    xul!nsNativeThemeWin::ClassicGetMinimumWidgetSize+0x14c
+    xul!nsNativeThemeWin::GetMinimumWidgetSize+0x2ca
+    xul!nsIFrame::AddXULMinSize+0x1e9
+    xul!nsBoxFrame::GetXULMinSize+0x169
+    xul!nsBoxFrame::GetXULPrefSize+0x29c
+    xul!nsSprocketLayout::GetXULPrefSize+0x14f
+
+
+1 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoA+0xf4
+    UxTheme!ClassicSystemParametersInfoA+0x41
+    UxTheme!_InternalSystemParametersInfo+0x10
+    UxTheme!ThemeSystemParametersInfoA+0xaa
+    user32!SystemParametersInfoA+0x9b
+    xul!_moz_cairo_win32_get_system_text_quality+0x36
+    xul!_cairo_dwrite_font_face_scaled_font_create+0x24e
+    xul!_moz_cairo_scaled_font_create+0x71c
+    xul!gfxDWriteFont::InitCairoScaledFont+0xc8
+    xul!gfxDWriteFont::SetupCairoFont+0x18
+    xul!gfxHarfBuzzShaper::ShapeText+0xb6
+
+
+1 - win32u!NtUserGetDisplayConfigBufferSizes
+    win32u!NtUserGetDisplayConfigBufferSizes
+    user32!GetDisplayConfigBufferSizes+0x27
+    dwrite!DWriteRenderingParams::GetMonitorInvertedFromDeviceName+0x72
+    dwrite!DWriteRenderingParams::CreateRenderingParamsFromDeviceName+0x1da
+    dwrite!DWriteRenderingParams::Create+0x19
+    dwrite!DWriteFactory::CreateRenderingParamsInternal+0x47
+    xul!create_dwrite_rendering_params+0x46
+    xul!SkOnce::operator()<void
+    xul!sk_get_dwrite_default_rendering_params+0x3a
+    xul!SkScalerContext_DW::SkScalerContext_DW+0x763
+    xul!DWriteFontTypeface::onCreateScalerContext+0x81
+    xul!SkTypeface::createScalerContext+0x6f
+
+
+1 - win32u!NtUserGetThreadState
+    win32u!NtUserGetThreadState
+    IMM32!_ImmDllInitialize+0xb4
+    ntdll!LdrpCallInitRoutine+0x6f
+    ntdll!LdrShutdownThread+0x154
+    ntdll!RtlExitUserThread+0x3e
+    KERNELBASE!FreeLibraryAndExitThread+0x4a
+    ucrtbase!common_end_thread+0xa4
+    ucrtbase!thread_start<unsigned
+    KERNEL32!BaseThreadInitThunk+0x14
+    mozglue!mozilla::interceptor::FuncHook<mozilla::interceptor::WindowsDllInterceptor<mozilla::interceptor::VMSharingPolicyShared<mozilla::interceptor::MMPolicyInProcess,128>
+    mozglue!patched_BaseThreadInitThunk+0x6f
+    ntdll!RtlUserThreadStart+0x21
+
+
+1 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!RealGetSystemMetrics+0x121
+    UxTheme!ThemeGetSystemMetrics+0x24
+    to
+    user32!GetSystemMetrics+0x80
+    xul!nsNativeThemeWin::ClassicGetMinimumWidgetSize+0x14c
+    xul!nsNativeThemeWin::GetMinimumWidgetSize+0x2ca
+    xul!nsIFrame::AddXULMinSize+0x1e9
+    xul!nsBoxFrame::GetXULMinSize+0x169
+    xul!nsSprocketLayout::GetXULMinSize+0x161
+    xul!nsBoxFrame::GetXULMinSize+0x1d9
+
+
+1 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoW+0x84
+    UxTheme!ClassicSystemParametersInfoW+0x41
+    UxTheme!_InternalSystemParametersInfo+0x10
+    UxTheme!ThemeSystemParametersInfoW+0xaa
+    user32!SystemParametersInfoW+0x93
+    dwrite!DWriteRenderingParams::CreateRenderingParamsFromDeviceName+0x1bd
+    dwrite!DWriteRenderingParams::Create+0x19
+    dwrite!DWriteFactory::CreateRenderingParamsInternal+0x47
+    xul!create_dwrite_rendering_params+0x46
+    xul!SkOnce::operator()<void
+    xul!sk_get_dwrite_default_rendering_params+0x3a
+    xul!SkScalerContext_DW::SkScalerContext_DW+0x763
+    xul!DWriteFontTypeface::onCreateScalerContext+0x81
+    xul!SkTypeface::createScalerContext+0x6f
+
+
+1 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!GetDpiForSystem+0x44
+    UxTheme!_InternalSystemParametersInfo+0x18
+    UxTheme!ThemeSystemParametersInfoW+0xb2
+    user32!SystemParametersInfoW+0x93
+    xul!SystemParametersInfo+0x2e
+    xul!nsUXThemeData::Invalidate+0xaa
+    xul!nsNativeThemeWin::~nsNativeThemeWin+0x3b
+    xul!nsNativeThemeWin::~nsNativeThemeWin+0x2c
+    xul!nsNativeTheme::Release+0x138
+    xul!nsNativeThemeWin::Release+0x1e
+
+
+1 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!GetDpiForSystem+0x44
+    UxTheme!_InternalSystemParametersInfo+0x18
+    UxTheme!ThemeSystemParametersInfoA+0xb2
+    user32!SystemParametersInfoA+0x9b
+    xul!_moz_cairo_win32_get_system_text_quality+0x95
+    xul!_cairo_dwrite_font_face_scaled_font_create+0x24e
+    xul!_moz_cairo_scaled_font_create+0x71c
+    xul!gfxDWriteFont::InitCairoScaledFont+0xc8
+    xul!gfxDWriteFont::SetupCairoFont+0x18
+    xul!gfxHarfBuzzShaper::ShapeText+0xb6
+
+
+1 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoW+0x84
+    UxTheme!ClassicSystemParametersInfoW+0x41
+    UxTheme!_InternalSystemParametersInfo+0x10
+    UxTheme!ThemeSystemParametersInfoW+0xaa
+    user32!SystemParametersInfoW+0x93
+    dwrite!DWriteRenderingParams::DetermineCompatibleSmoothingMode+0x40
+    dwrite!DWriteRenderingParams::DWriteRenderingParams+0x2b
+    dwrite!ComObject<DWriteRenderingParams,DeleteOnZeroReference>::ComObject<DWriteRenderingParams,DeleteOnZeroReference><float
+    dwrite!DWriteRenderingParams::CreateRenderingParamsFromDeviceName+0x258
+    dwrite!DWriteRenderingParams::Create+0x19
+    dwrite!DWriteFactory::CreateRenderingParamsInternal+0x47
+    xul!create_dwrite_rendering_params+0x46
+    xul!SkOnce::operator()<void
+    xul!sk_get_dwrite_default_rendering_params+0x3a
+    xul!SkScalerContext_DW::SkScalerContext_DW+0x763
+    xul!DWriteFontTypeface::onCreateScalerContext+0x81
+    xul!SkTypeface::createScalerContext+0x6f
+
+
+1 - win32u!NtUserReleaseDC
+    win32u!NtUserReleaseDC
+    xul!mozilla::widget::WinUtils::SystemDPI+0x4e
+    xul!mozilla::widget::WinUtils::SystemScaleFactor+0x9
+    xul!GetSysFontInfo+0x1b0
+    xul!nsLookAndFeel::GetFontImpl+0xd2
+    xul!mozilla::LookAndFeel::GetFont+0x2f
+    xul!nsLayoutUtils::ComputeSystemFont+0x7c
+
+
+1 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoW+0x84
+    UxTheme!ClassicSystemParametersInfoW+0x41
+    UxTheme!_InternalSystemParametersInfo+0x10
+    UxTheme!ThemeSystemParametersInfoW+0xaa
+    to
+    user32!SystemParametersInfoW+0x93
+    xul!SystemParametersInfo+0x2e
+    xul!nsUXThemeData::Invalidate+0xaa
+    xul!nsNativeThemeWin::~nsNativeThemeWin+0x3b
+    xul!nsNativeThemeWin::~nsNativeThemeWin+0x2c
+    xul!nsNativeTheme::Release+0x138
+    xul!nsNativeThemeWin::Release+0x1e
+
+
+1 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!GetDpiForSystem+0x44
+    UxTheme!_InternalSystemParametersInfo+0x18
+    UxTheme!ThemeSystemParametersInfoA+0xb2
+    user32!SystemParametersInfoA+0x9b
+    xul!_moz_cairo_win32_get_system_text_quality+0x36
+    xul!_cairo_dwrite_font_face_scaled_font_create+0x24e
+    xul!_moz_cairo_scaled_font_create+0x71c
+    xul!gfxDWriteFont::InitCairoScaledFont+0xc8
+    xul!gfxDWriteFont::SetupCairoFont+0x18
+    xul!gfxHarfBuzzShaper::ShapeText+0xb6
+
+
+1 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!GetDpiForSystem+0x44
+    UxTheme!_InternalSystemParametersInfo+0x18
+    UxTheme!ThemeSystemParametersInfoW+0xb2
+    user32!SystemParametersInfoW+0x93
+    dwrite!DWriteRenderingParams::DetermineCompatibleGamma+0x26
+    dwrite!DWriteRenderingParams::DWriteRenderingParams+0x32
+    dwrite!ComObject<DWriteRenderingParams,DeleteOnZeroReference>::ComObject<DWriteRenderingParams,DeleteOnZeroReference><float
+    dwrite!DWriteRenderingParams::CreateRenderingParamsFromDeviceName+0x258
+    dwrite!DWriteRenderingParams::Create+0x19
+    dwrite!DWriteFactory::CreateRenderingParamsInternal+0x47
+    xul!create_dwrite_rendering_params+0x46
+    xul!SkOnce::operator()<void
+    xul!sk_get_dwrite_default_rendering_params+0x3a
+    xul!SkScalerContext_DW::SkScalerContext_DW+0x763
+    xul!DWriteFontTypeface::onCreateScalerContext+0x81
+    xul!SkTypeface::createScalerContext+0x6f
+
+
+1 - win32u!NtUserSystemParametersInfo
+    win32u!NtUserSystemParametersInfo
+    user32!RealSystemParametersInfoA+0xf4
+    UxTheme!ClassicSystemParametersInfoA+0x41
+    UxTheme!_InternalSystemParametersInfo+0x10
+    UxTheme!ThemeSystemParametersInfoA+0xaa
+    user32!SystemParametersInfoA+0x9b
+    xul!_moz_cairo_win32_get_system_text_quality+0x95
+    xul!_cairo_dwrite_font_face_scaled_font_create+0x24e
+    xul!_moz_cairo_scaled_font_create+0x71c
+    xul!gfxDWriteFont::InitCairoScaledFont+0xc8
+    xul!gfxDWriteFont::SetupCairoFont+0x18
+    xul!gfxHarfBuzzShaper::ShapeText+0xb6
+
+
+1 - win32u!NtUserGetDC
+    win32u!NtUserGetDC
+    xul!mozilla::widget::WinUtils::SystemDPI+0x1e
+    xul!mozilla::widget::WinUtils::SystemScaleFactor+0x9
+    xul!GetSysFontInfo+0x1b0
+    xul!nsLookAndFeel::GetFontImpl+0xd2
+    xul!mozilla::LookAndFeel::GetFont+0x2f
+    xul!nsLayoutUtils::ComputeSystemFont+0x7c
+
+
+1 - win32u!NtGdiGetDeviceCaps
+    win32u!NtGdiGetDeviceCaps
+    GDI32!GetDeviceCaps+0x12d
+    xul!mozilla::widget::WinUtils::SystemDPI+0x33
+    xul!mozilla::widget::WinUtils::SystemScaleFactor+0x9
+    xul!GetSysFontInfo+0x1b0
+    xul!nsLookAndFeel::GetFontImpl+0xd2
+    xul!mozilla::LookAndFeel::GetFont+0x2f
+    xul!nsLayoutUtils::ComputeSystemFont+0x7c
+
+
+1 - win32u!NtUserGetDpiForCurrentProcess
+    win32u!NtUserGetDpiForCurrentProcess
+    user32!GetDpiForSystem+0x44
+    UxTheme!_InternalSystemParametersInfo+0x18
+    UxTheme!ThemeSystemParametersInfoW+0xb2
+    user32!SystemParametersInfoW+0x93
+    dwrite!DWriteRenderingParams::DetermineCompatibleSmoothingMode+0x20
+    dwrite!DWriteRenderingParams::DWriteRenderingParams+0x2b
+    dwrite!ComObject<DWriteRenderingParams,DeleteOnZeroReference>::ComObject<DWriteRenderingParams,DeleteOnZeroReference><float
+    dwrite!DWriteRenderingParams::CreateRenderingParamsFromDeviceName+0x258
+    dwrite!DWriteRenderingParams::Create+0x19
+    dwrite!DWriteFactory::CreateRenderingParamsInternal+0x47
+    xul!create_dwrite_rendering_params+0x46
+    xul!SkOnce::operator()<void
+    xul!sk_get_dwrite_default_rendering_params+0x3a
+    xul!SkScalerContext_DW::SkScalerContext_DW+0x763
+    xul!DWriteFontTypeface::onCreateScalerContext+0x81
+    xul!SkTypeface::createScalerContext+0x6f
+
+
+1 - win32u!NtUserQueryDisplayConfig
+    win32u!NtUserQueryDisplayConfig
+    user32!QueryDisplayConfig+0x74
+    dwrite!DWriteRenderingParams::GetMonitorInvertedFromDeviceName+0xc2
+    dwrite!DWriteRenderingParams::CreateRenderingParamsFromDeviceName+0x1da
+    dwrite!DWriteRenderingParams::Create+0x19
+    dwrite!DWriteFactory::CreateRenderingParamsInternal+0x47
+    xul!create_dwrite_rendering_params+0x46
+    xul!SkOnce::operator()<void
+    xul!sk_get_dwrite_default_rendering_params+0x3a
+    xul!SkScalerContext_DW::SkScalerContext_DW+0x763
+    xul!DWriteFontTypeface::onCreateScalerContext+0x81
+    xul!SkTypeface::createScalerContext+0x6f
+
+
+1 - win32u!NtUserEnumDisplayDevices
+    win32u!NtUserEnumDisplayDevices
+    user32!EnumDisplayDevicesW+0x69
+    dwrite!DWriteRenderingParams::CreateRenderingParamsFromDeviceName+0xf1
+    dwrite!DWriteRenderingParams::Create+0x19
+    dwrite!DWriteFactory::CreateRenderingParamsInternal+0x47
+    xul!create_dwrite_rendering_params+0x46
+    xul!SkOnce::operator()<void
+    xul!sk_get_dwrite_default_rendering_params+0x3a
+    xul!SkScalerContext_DW::SkScalerContext_DW+0x763
+    xul!DWriteFontTypeface::onCreateScalerContext+0x81
+    xul!SkTypeface::createScalerContext+0x6f
+
+
