@@ -1,24 +1,25 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 
-import Header from '../components/header';
+import Header from '../../components/header';
 
-import logStyles from './log.module.css';
+import logStyles from '../log.module.css';
 
 export default ({ data }) => (
   <div>
     <Header />
     <div className="page">
-      <h3>02 - svg - report</h3>
-      <h3>this log last generated at: 4/15/2019, 8:42:52 AM</h3>
+      <h3>05 - webrtc - report</h3>
+      <p>Log last generated at: &emsp; &emsp; &emsp; {data.site.buildTime.replace('T', ' ').split('.')[0]} </p>
+      <p>On mozilla-central revision: &emsp; {data.site.siteMetadata.revision}</p>
       <p className={logStyles.reportExplanation}>
-        This is a log capturing the rendering of the Ghostscript Tiger svg.
+      This is a log capturing the non-crashing peer connection tests under /dom/media/tests/mochitest/.
       </p>
       <div className={logStyles.stack}>
-        {data.allSvgReportJson.edges.map((node) => (
+        {data.allWebrtcShortReportJson.edges.map((node) => (
           <div>
             <p className={logStyles.stackFrequency}>
-              {node.node.frequency} -{node.node.frames[0]}
+              {node.node.frequency} - {node.node.frames[0]}
             </p>
             {node.node.frames.map((elem) => (
               <p className={logStyles.stackFrame}>{elem}</p>
@@ -32,7 +33,13 @@ export default ({ data }) => (
 
 export const query = graphql`
   query {
-    allSvgReportJson {
+    site {
+      buildTime
+      siteMetadata {
+        revision
+      }
+    }
+    allWebrtcShortReportJson {
       edges {
         node {
           frequency

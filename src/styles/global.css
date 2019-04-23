@@ -18,7 +18,7 @@ p {
   flex-direction: column;
 }
 
-.reportList a {
+.reportList p {
   margin: 1.2%;
   font-size: 22pt;
 }
